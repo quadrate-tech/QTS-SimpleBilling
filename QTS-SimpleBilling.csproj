@@ -8,8 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Forms\Master Forms\" />
+    <Folder Include="Forms\Reports\" />
+    <Folder Include="Forms\Tools\" />
     <Folder Include="Model\" />
-    <Folder Include="Forms\" />
+    <Folder Include="BAL\" />
     <Folder Include="Repo\" />
   </ItemGroup>
 
