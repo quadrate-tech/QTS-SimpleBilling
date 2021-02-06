@@ -8,17 +8,17 @@ namespace QTS_SimpleBilling.Model
     public class Employee
     {
         [Key]
-        public int employee_id { get; set; }
+        public int EmployeeId { get; set; }
         [MaxLength(60)]
-        public string employee_name { get; set; }
+        public string EmployeeName { get; set; }
         [MaxLength(25)]
-        public string contact { get; set; }
+        public string Contact { get; set; }
         [MaxLength(40)]
-        public string email { get; set; }
+        public string Email { get; set; }
         [MaxLength(240)]
-        public string address { get; set; }
-        public int status { get; set; }
+        public string Address { get; set; }
+        public int Status { get; set; }
         [MaxLength(10)]
-        public string employee_code { get; set; }
+        public string EmployeeCode { get; set; }
     }
 }
