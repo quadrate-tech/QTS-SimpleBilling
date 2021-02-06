@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QTS_SimpleBilling.Repo
+namespace QTS_SimpleBilling.EmpRepo
 {
     public class EmployeeRepo
     {
