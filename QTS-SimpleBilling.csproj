@@ -9,7 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Forms\Master Forms\" />
     <Folder Include="Forms\Reports\" />
     <Folder Include="Forms\Tools\" />
     <Folder Include="BAL\" />
