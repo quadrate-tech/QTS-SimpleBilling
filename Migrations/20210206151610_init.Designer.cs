@@ -8,7 +8,7 @@ using QTS_SimpleBilling.Model;
 
 namespace QTS_SimpleBilling.Migrations
 {
-    [DbContext(typeof(BillingModel))]
+    [DbContext(typeof(BillingContext))]
     [Migration("20210206151610_init")]
     partial class init
     {

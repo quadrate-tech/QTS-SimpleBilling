@@ -7,7 +7,7 @@ using QTS_SimpleBilling.Model;
 
 namespace QTS_SimpleBilling.Migrations
 {
-    [DbContext(typeof(BillingModel))]
+    [DbContext(typeof(BillingContext))]
     partial class BillingModelModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

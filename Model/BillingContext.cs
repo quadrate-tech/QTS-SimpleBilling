@@ -5,7 +5,7 @@ using System.Text;
 
 namespace QTS_SimpleBilling.Model
 {
-    internal class BillingModel : DbContext
+    internal class BillingContext : DbContext
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionBuilder)
         {
