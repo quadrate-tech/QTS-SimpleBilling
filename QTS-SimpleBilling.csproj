@@ -2,9 +2,10 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0-windows</TargetFramework>
     <RootNamespace>QTS_SimpleBilling</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
+    <StartupObject>QTS_SimpleBilling.Program</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,6 +14,15 @@
     <Folder Include="Forms\Tools\" />
     <Folder Include="BAL\" />
     <Folder Include="Repo\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>
