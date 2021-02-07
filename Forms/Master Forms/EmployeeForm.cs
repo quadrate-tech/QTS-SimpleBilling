@@ -31,6 +31,10 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
             {
                 BAL.Exc.ErMessage(ex);
             }
+            finally
+            {
+                DGVEmployee.DataSource = empRepo.View();
+            }
         }
 
         private Employee GetEmp()
@@ -52,6 +56,16 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
             else if (RDOInActive.Checked == true)
                 status = 0;
             return status;
+        }
+
+        private void BtnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DGVEmployee_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }

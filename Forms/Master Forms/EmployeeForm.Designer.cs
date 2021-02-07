@@ -235,6 +235,7 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
             this.BtnEdit.TabIndex = 15;
             this.BtnEdit.Text = "Edit";
             this.BtnEdit.UseVisualStyleBackColor = true;
+            this.BtnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
             // BtnDelete
             // 
@@ -270,6 +271,7 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
             this.DGVEmployee.RowTemplate.Height = 25;
             this.DGVEmployee.Size = new System.Drawing.Size(811, 296);
             this.DGVEmployee.TabIndex = 0;
+            this.DGVEmployee.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVEmployee_CellClick);
             // 
             // RDOActive
             // 
