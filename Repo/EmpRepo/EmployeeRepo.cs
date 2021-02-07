@@ -4,9 +4,6 @@ using QTS_SimpleBilling.Repo.EmployeeRepo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace QTS_SimpleBilling.EmpRepo
 {
@@ -26,9 +23,7 @@ namespace QTS_SimpleBilling.EmpRepo
                 }
                 else
                 {
-                    using BillingContext con = new BillingContext();
-                    con.Update(t);
-                    return result = con.SaveChanges();
+                    return Update(t);
                 }
             }
             catch (Exception ex)
@@ -40,7 +35,18 @@ namespace QTS_SimpleBilling.EmpRepo
 
         public int Delete(Employee t)
         {
-            throw new NotImplementedException();
+            int result = 0;
+            try
+            {
+                using BillingContext context = new BillingContext();
+                context.Employees.Remove(t);
+                return result = context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Exc.ErMessage(ex);
+                return result;
+            }
         }
 
         public int Update(Employee t)
@@ -61,7 +67,16 @@ namespace QTS_SimpleBilling.EmpRepo
 
         public List<Employee> View()
         {
-            throw new NotImplementedException();
+            try
+            {
+                using BillingContext context = new BillingContext();
+                return context.Employees.ToList();
+            }
+            catch (Exception ex)
+            {
+                Exc.ErMessage(ex);
+                return null;
+            }
         }
     }
 }
