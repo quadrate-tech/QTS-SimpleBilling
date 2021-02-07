@@ -260,8 +260,10 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
             // 
             this.DGVEmployee.AllowUserToAddRows = false;
             this.DGVEmployee.AllowUserToDeleteRows = false;
+            this.DGVEmployee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.DGVEmployee.BackgroundColor = System.Drawing.Color.White;
             this.DGVEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGVEmployee.Location = new System.Drawing.Point(58, 226);
             this.DGVEmployee.Name = "DGVEmployee";
             this.DGVEmployee.ReadOnly = true;
