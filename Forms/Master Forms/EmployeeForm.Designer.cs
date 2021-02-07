@@ -46,14 +46,18 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
             this.BtnEdit = new System.Windows.Forms.Button();
             this.BtnDelete = new System.Windows.Forms.Button();
             this.BtnSave = new System.Windows.Forms.Button();
-            this.DGVEmployee = new System.Windows.Forms.DataGridView();
-            this.RDOActive = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.RDOActive = new System.Windows.Forms.RadioButton();
             this.RDOInActive = new System.Windows.Forms.RadioButton();
+            this.DGVEmployee = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVEmployee)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVEmployee)).BeginInit();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -62,8 +66,8 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.DGVEmployee, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -77,10 +81,9 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.68932F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.91262F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.51942F));
             this.tableLayoutPanel2.Controls.Add(this.TxtEmpCode, 1, 4);
             this.tableLayoutPanel2.Controls.Add(this.TxtAddress, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.TxtEmail, 1, 2);
@@ -92,13 +95,9 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
             this.tableLayoutPanel2.Controls.Add(this.label7, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.label6, 0, 5);
             this.tableLayoutPanel2.Controls.Add(this.TxtEmpName, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.BtnCreate, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.BtnEdit, 2, 1);
-            this.tableLayoutPanel2.Controls.Add(this.BtnDelete, 2, 2);
-            this.tableLayoutPanel2.Controls.Add(this.BtnSave, 2, 3);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 1, 5);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(58, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 6;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
@@ -107,39 +106,39 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(811, 175);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(586, 169);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // TxtEmpCode
             // 
             this.TxtEmpCode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxtEmpCode.Location = new System.Drawing.Point(154, 119);
+            this.TxtEmpCode.Location = new System.Drawing.Point(155, 115);
             this.TxtEmpCode.Name = "TxtEmpCode";
-            this.TxtEmpCode.Size = new System.Drawing.Size(422, 23);
+            this.TxtEmpCode.Size = new System.Drawing.Size(428, 23);
             this.TxtEmpCode.TabIndex = 12;
             // 
             // TxtAddress
             // 
             this.TxtAddress.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxtAddress.Location = new System.Drawing.Point(154, 90);
+            this.TxtAddress.Location = new System.Drawing.Point(155, 87);
             this.TxtAddress.Name = "TxtAddress";
-            this.TxtAddress.Size = new System.Drawing.Size(422, 23);
+            this.TxtAddress.Size = new System.Drawing.Size(428, 23);
             this.TxtAddress.TabIndex = 11;
             // 
             // TxtEmail
             // 
             this.TxtEmail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxtEmail.Location = new System.Drawing.Point(154, 61);
+            this.TxtEmail.Location = new System.Drawing.Point(155, 59);
             this.TxtEmail.Name = "TxtEmail";
-            this.TxtEmail.Size = new System.Drawing.Size(422, 23);
+            this.TxtEmail.Size = new System.Drawing.Size(428, 23);
             this.TxtEmail.TabIndex = 10;
             // 
             // TxtContact
             // 
             this.TxtContact.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxtContact.Location = new System.Drawing.Point(154, 32);
+            this.TxtContact.Location = new System.Drawing.Point(155, 31);
             this.TxtContact.Name = "TxtContact";
-            this.TxtContact.Size = new System.Drawing.Size(422, 23);
+            this.TxtContact.Size = new System.Drawing.Size(428, 23);
             this.TxtContact.TabIndex = 9;
             // 
             // label5
@@ -147,9 +146,9 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
             this.label5.AutoSize = true;
             this.label5.Dock = System.Windows.Forms.DockStyle.Right;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(100, 58);
+            this.label5.Location = new System.Drawing.Point(101, 56);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 29);
+            this.label5.Size = new System.Drawing.Size(48, 28);
             this.label5.TabIndex = 4;
             this.label5.Text = "Email";
             // 
@@ -158,9 +157,9 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Right;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(85, 29);
+            this.label2.Location = new System.Drawing.Point(86, 28);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 29);
+            this.label2.Size = new System.Drawing.Size(63, 28);
             this.label2.TabIndex = 1;
             this.label2.Text = "Contact";
             // 
@@ -169,9 +168,9 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Right;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(24, 0);
+            this.label1.Location = new System.Drawing.Point(25, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 29);
+            this.label1.Size = new System.Drawing.Size(124, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "Employee Name";
             // 
@@ -180,9 +179,9 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Right;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(82, 87);
+            this.label4.Location = new System.Drawing.Point(83, 84);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 29);
+            this.label4.Size = new System.Drawing.Size(66, 28);
             this.label4.TabIndex = 3;
             this.label4.Text = "Address";
             // 
@@ -191,9 +190,9 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
             this.label7.AutoSize = true;
             this.label7.Dock = System.Windows.Forms.DockStyle.Right;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(30, 116);
+            this.label7.Location = new System.Drawing.Point(31, 112);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(118, 29);
+            this.label7.Size = new System.Drawing.Size(118, 28);
             this.label7.TabIndex = 7;
             this.label7.Text = "Employee Code";
             // 
@@ -202,25 +201,26 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Right;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(96, 145);
+            this.label6.Location = new System.Drawing.Point(97, 140);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 30);
+            this.label6.Size = new System.Drawing.Size(52, 29);
             this.label6.TabIndex = 6;
             this.label6.Text = "Status";
             // 
             // TxtEmpName
             // 
             this.TxtEmpName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxtEmpName.Location = new System.Drawing.Point(154, 3);
+            this.TxtEmpName.Location = new System.Drawing.Point(155, 3);
             this.TxtEmpName.Name = "TxtEmpName";
-            this.TxtEmpName.Size = new System.Drawing.Size(422, 23);
+            this.TxtEmpName.Size = new System.Drawing.Size(428, 23);
             this.TxtEmpName.TabIndex = 8;
             // 
             // BtnCreate
             // 
-            this.BtnCreate.Location = new System.Drawing.Point(582, 3);
+            this.BtnCreate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnCreate.Location = new System.Drawing.Point(3, 3);
             this.BtnCreate.Name = "BtnCreate";
-            this.BtnCreate.Size = new System.Drawing.Size(226, 23);
+            this.BtnCreate.Size = new System.Drawing.Size(207, 36);
             this.BtnCreate.TabIndex = 14;
             this.BtnCreate.Text = "Add";
             this.BtnCreate.UseVisualStyleBackColor = true;
@@ -229,9 +229,9 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
             // BtnEdit
             // 
             this.BtnEdit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnEdit.Location = new System.Drawing.Point(582, 32);
+            this.BtnEdit.Location = new System.Drawing.Point(3, 45);
             this.BtnEdit.Name = "BtnEdit";
-            this.BtnEdit.Size = new System.Drawing.Size(226, 23);
+            this.BtnEdit.Size = new System.Drawing.Size(207, 36);
             this.BtnEdit.TabIndex = 15;
             this.BtnEdit.Text = "Edit";
             this.BtnEdit.UseVisualStyleBackColor = true;
@@ -240,9 +240,9 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
             // BtnDelete
             // 
             this.BtnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnDelete.Location = new System.Drawing.Point(582, 61);
+            this.BtnDelete.Location = new System.Drawing.Point(3, 87);
             this.BtnDelete.Name = "BtnDelete";
-            this.BtnDelete.Size = new System.Drawing.Size(226, 23);
+            this.BtnDelete.Size = new System.Drawing.Size(207, 36);
             this.BtnDelete.TabIndex = 16;
             this.BtnDelete.Text = "Delete";
             this.BtnDelete.UseVisualStyleBackColor = true;
@@ -250,12 +250,49 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
             // BtnSave
             // 
             this.BtnSave.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnSave.Location = new System.Drawing.Point(582, 90);
+            this.BtnSave.Location = new System.Drawing.Point(3, 129);
             this.BtnSave.Name = "BtnSave";
-            this.BtnSave.Size = new System.Drawing.Size(226, 23);
+            this.BtnSave.Size = new System.Drawing.Size(207, 37);
             this.BtnSave.TabIndex = 17;
             this.BtnSave.Text = "Save";
             this.BtnSave.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.RDOActive, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.RDOInActive, 1, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(155, 143);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(428, 23);
+            this.tableLayoutPanel3.TabIndex = 18;
+            // 
+            // RDOActive
+            // 
+            this.RDOActive.AutoSize = true;
+            this.RDOActive.Location = new System.Drawing.Point(3, 3);
+            this.RDOActive.Name = "RDOActive";
+            this.RDOActive.Size = new System.Drawing.Size(58, 17);
+            this.RDOActive.TabIndex = 2;
+            this.RDOActive.TabStop = true;
+            this.RDOActive.Text = "Active";
+            this.RDOActive.UseVisualStyleBackColor = true;
+            // 
+            // RDOInActive
+            // 
+            this.RDOInActive.AutoSize = true;
+            this.RDOInActive.Location = new System.Drawing.Point(217, 3);
+            this.RDOInActive.Name = "RDOInActive";
+            this.RDOInActive.Size = new System.Drawing.Size(66, 17);
+            this.RDOInActive.TabIndex = 3;
+            this.RDOInActive.TabStop = true;
+            this.RDOInActive.Text = "Inactive";
+            this.RDOInActive.UseVisualStyleBackColor = true;
             // 
             // DGVEmployee
             // 
@@ -273,42 +310,39 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
             this.DGVEmployee.TabIndex = 0;
             this.DGVEmployee.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVEmployee_CellClick);
             // 
-            // RDOActive
+            // tableLayoutPanel4
             // 
-            this.RDOActive.AutoSize = true;
-            this.RDOActive.Location = new System.Drawing.Point(3, 3);
-            this.RDOActive.Name = "RDOActive";
-            this.RDOActive.Size = new System.Drawing.Size(58, 18);
-            this.RDOActive.TabIndex = 2;
-            this.RDOActive.TabStop = true;
-            this.RDOActive.Text = "Active";
-            this.RDOActive.UseVisualStyleBackColor = true;
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.9963F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.0037F));
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 1, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(58, 3);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(811, 175);
+            this.tableLayoutPanel4.TabIndex = 2;
             // 
-            // tableLayoutPanel3
+            // tableLayoutPanel5
             // 
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.RDOActive, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.RDOInActive, 1, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(154, 148);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(422, 24);
-            this.tableLayoutPanel3.TabIndex = 18;
-            // 
-            // RDOInActive
-            // 
-            this.RDOInActive.AutoSize = true;
-            this.RDOInActive.Location = new System.Drawing.Point(214, 3);
-            this.RDOInActive.Name = "RDOInActive";
-            this.RDOInActive.Size = new System.Drawing.Size(66, 18);
-            this.RDOInActive.TabIndex = 3;
-            this.RDOInActive.TabStop = true;
-            this.RDOInActive.Text = "Inactive";
-            this.RDOInActive.UseVisualStyleBackColor = true;
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Controls.Add(this.BtnCreate, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.BtnEdit, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.BtnDelete, 0, 2);
+            this.tableLayoutPanel5.Controls.Add(this.BtnSave, 0, 3);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(595, 3);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 4;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(213, 169);
+            this.tableLayoutPanel5.TabIndex = 2;
             // 
             // EmployeeForm
             // 
@@ -319,12 +353,15 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "EmployeeForm";
             this.Text = "Employee";
+            this.Load += new System.EventHandler(this.EmployeeForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVEmployee)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVEmployee)).EndInit();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -352,5 +389,7 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.RadioButton RDOActive;
         private System.Windows.Forms.RadioButton RDOInActive;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
     }
 }

@@ -1,21 +1,14 @@
 ﻿using QTS_SimpleBilling.EmpRepo;
 using QTS_SimpleBilling.Model;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QTS_SimpleBilling.Forms.Master_Forms
 {
     public partial class EmployeeForm : Form
     {
-        Employee emp = new Employee();
-        EmployeeRepo empRepo = new EmployeeRepo();
+        readonly Employee emp = new Employee();
+        readonly EmployeeRepo empRepo = new EmployeeRepo();
         public EmployeeForm()
         {
             InitializeComponent();
@@ -65,7 +58,19 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
 
         private void DGVEmployee_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            emp.EmployeeId = Convert.ToInt32(DGVEmployee.SelectedRows[0].Cells[0].Value.ToString());
+            emp.EmployeeName = DGVEmployee.SelectedRows[0].Cells[1].Value.ToString();
+            emp.Contact = DGVEmployee.SelectedRows[0].Cells[2].ToString();
+            emp.Email = DGVEmployee.SelectedRows[0].Cells[3].ToString();
+            emp.Address = DGVEmployee.SelectedRows[0].Cells[4].ToString();
+            emp.Status = Convert.ToInt32(DGVEmployee.SelectedRows[0].Cells[5].Value.ToString());
+            emp.EmployeeCode = DGVEmployee.SelectedRows[0].Cells[6].ToString();
+        }
+
+        private void EmployeeForm_Load(object sender, EventArgs e)
+        {
+            tableLayoutPanel2.Enabled = false;
+            DGVEmployee.DataSource = empRepo.View();
         }
     }
 }
