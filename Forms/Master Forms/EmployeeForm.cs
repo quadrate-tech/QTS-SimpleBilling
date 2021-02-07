@@ -1,4 +1,5 @@
-﻿using QTS_SimpleBilling.Model;
+﻿using QTS_SimpleBilling.EmpRepo;
+using QTS_SimpleBilling.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
     public partial class EmployeeForm : Form
     {
         Employee emp = new Employee();
+        EmployeeRepo empRepo = new EmployeeRepo();
         public EmployeeForm()
         {
             InitializeComponent();
@@ -21,7 +23,14 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
 
         private void BtnCreate_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                empRepo.Create(GetEmp());
+            }
+            catch (Exception ex)
+            {
+                BAL.Exc.ErMessage(ex);
+            }
         }
 
         private Employee GetEmp()
