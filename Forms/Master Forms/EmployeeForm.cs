@@ -16,18 +16,7 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
 
         private void BtnCreate_Click(object sender, EventArgs e)
         {
-            try
-            {
-                empRepo.Create(GetEmp());
-            }
-            catch (Exception ex)
-            {
-                BAL.Exc.ErMessage(ex);
-            }
-            finally
-            {
-                DGVEmployee.DataSource = empRepo.View();
-            }
+            TLPCRUD.Enabled = true;
         }
 
         private Employee GetEmp()
@@ -51,26 +40,75 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
             return status;
         }
 
-        private void BtnEdit_Click(object sender, EventArgs e)
+        private void BtnReset_Click(object sender, EventArgs e)
         {
-
+            TxtEmpName.Text = string.Empty;
+            TxtContact.Text = string.Empty;
+            TxtEmail.Text = string.Empty;
+            TxtAddress.Text = string.Empty;
+            TxtEmpCode.Text = string.Empty;
+            emp.EmployeeId = 0;
         }
 
         private void DGVEmployee_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             emp.EmployeeId = Convert.ToInt32(DGVEmployee.SelectedRows[0].Cells[0].Value.ToString());
             emp.EmployeeName = DGVEmployee.SelectedRows[0].Cells[1].Value.ToString();
-            emp.Contact = DGVEmployee.SelectedRows[0].Cells[2].ToString();
-            emp.Email = DGVEmployee.SelectedRows[0].Cells[3].ToString();
-            emp.Address = DGVEmployee.SelectedRows[0].Cells[4].ToString();
+            emp.Contact = DGVEmployee.SelectedRows[0].Cells[2].Value.ToString();
+            emp.Email = DGVEmployee.SelectedRows[0].Cells[3].Value.ToString();
+            emp.Address = DGVEmployee.SelectedRows[0].Cells[4].Value.ToString();
             emp.Status = Convert.ToInt32(DGVEmployee.SelectedRows[0].Cells[5].Value.ToString());
-            emp.EmployeeCode = DGVEmployee.SelectedRows[0].Cells[6].ToString();
+            emp.EmployeeCode = DGVEmployee.SelectedRows[0].Cells[6].Value.ToString();
+            TxtEmpName.Text = emp.EmployeeName;
+            TxtContact.Text = emp.Contact;
+            TxtEmail.Text = emp.Email;
+            TxtAddress.Text = emp.Address;
+            TxtEmpCode.Text = emp.EmployeeCode;
+            if (emp.Status == 1)
+                RDOActive.Checked = true;
+            else
+                RDOInActive.Checked = true;
+
         }
 
         private void EmployeeForm_Load(object sender, EventArgs e)
         {
-            tableLayoutPanel2.Enabled = false;
+            TLPCRUD.Enabled = false;
             DGVEmployee.DataSource = empRepo.View();
+        }
+
+        private void BtnSave_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                empRepo.Create(GetEmp());
+            }
+            catch (Exception ex)
+            {
+                BAL.Exc.ErMessage(ex);
+            }
+            finally
+            {
+                TLPCRUD.Enabled = false;
+                DGVEmployee.DataSource = empRepo.View();
+            }
+        }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                empRepo.Delete(GetEmp());
+            }
+            catch (Exception ex)
+            {
+                BAL.Exc.ErMessage(ex);
+            }
+            finally
+            {
+                TLPCRUD.Enabled = false;
+                DGVEmployee.DataSource = empRepo.View();
+            }
         }
     }
 }

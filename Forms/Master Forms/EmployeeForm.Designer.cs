@@ -30,7 +30,9 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.DGVEmployee = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.TLPCRUD = new System.Windows.Forms.TableLayoutPanel();
             this.TxtEmpCode = new System.Windows.Forms.TextBox();
             this.TxtAddress = new System.Windows.Forms.TextBox();
             this.TxtEmail = new System.Windows.Forms.TextBox();
@@ -42,21 +44,19 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.TxtEmpName = new System.Windows.Forms.TextBox();
-            this.BtnCreate = new System.Windows.Forms.Button();
-            this.BtnEdit = new System.Windows.Forms.Button();
-            this.BtnDelete = new System.Windows.Forms.Button();
-            this.BtnSave = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.RDOActive = new System.Windows.Forms.RadioButton();
             this.RDOInActive = new System.Windows.Forms.RadioButton();
-            this.DGVEmployee = new System.Windows.Forms.DataGridView();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.BtnCreate = new System.Windows.Forms.Button();
+            this.BtnReset = new System.Windows.Forms.Button();
+            this.BtnDelete = new System.Windows.Forms.Button();
+            this.BtnSave = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVEmployee)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
+            this.TLPCRUD.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,35 +79,66 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
             this.tableLayoutPanel1.Size = new System.Drawing.Size(929, 604);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // tableLayoutPanel2
+            // DGVEmployee
             // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.68932F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.91262F));
-            this.tableLayoutPanel2.Controls.Add(this.TxtEmpCode, 1, 4);
-            this.tableLayoutPanel2.Controls.Add(this.TxtAddress, 1, 3);
-            this.tableLayoutPanel2.Controls.Add(this.TxtEmail, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.TxtContact, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label5, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label4, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.label7, 0, 4);
-            this.tableLayoutPanel2.Controls.Add(this.label6, 0, 5);
-            this.tableLayoutPanel2.Controls.Add(this.TxtEmpName, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 1, 5);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 6;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(586, 169);
-            this.tableLayoutPanel2.TabIndex = 1;
+            this.DGVEmployee.AllowUserToAddRows = false;
+            this.DGVEmployee.AllowUserToDeleteRows = false;
+            this.DGVEmployee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGVEmployee.BackgroundColor = System.Drawing.Color.White;
+            this.DGVEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGVEmployee.Location = new System.Drawing.Point(58, 226);
+            this.DGVEmployee.Name = "DGVEmployee";
+            this.DGVEmployee.ReadOnly = true;
+            this.DGVEmployee.RowTemplate.Height = 25;
+            this.DGVEmployee.Size = new System.Drawing.Size(811, 296);
+            this.DGVEmployee.TabIndex = 0;
+            this.DGVEmployee.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVEmployee_CellClick);
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.9963F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.0037F));
+            this.tableLayoutPanel4.Controls.Add(this.TLPCRUD, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 1, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(58, 3);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(811, 175);
+            this.tableLayoutPanel4.TabIndex = 2;
+            // 
+            // TLPCRUD
+            // 
+            this.TLPCRUD.ColumnCount = 2;
+            this.TLPCRUD.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 18.68932F));
+            this.TLPCRUD.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.91262F));
+            this.TLPCRUD.Controls.Add(this.TxtEmpCode, 1, 4);
+            this.TLPCRUD.Controls.Add(this.TxtAddress, 1, 3);
+            this.TLPCRUD.Controls.Add(this.TxtEmail, 1, 2);
+            this.TLPCRUD.Controls.Add(this.TxtContact, 1, 1);
+            this.TLPCRUD.Controls.Add(this.label5, 0, 2);
+            this.TLPCRUD.Controls.Add(this.label2, 0, 1);
+            this.TLPCRUD.Controls.Add(this.label1, 0, 0);
+            this.TLPCRUD.Controls.Add(this.label4, 0, 3);
+            this.TLPCRUD.Controls.Add(this.label7, 0, 4);
+            this.TLPCRUD.Controls.Add(this.label6, 0, 5);
+            this.TLPCRUD.Controls.Add(this.TxtEmpName, 1, 0);
+            this.TLPCRUD.Controls.Add(this.tableLayoutPanel3, 1, 5);
+            this.TLPCRUD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TLPCRUD.Location = new System.Drawing.Point(3, 3);
+            this.TLPCRUD.Name = "TLPCRUD";
+            this.TLPCRUD.RowCount = 6;
+            this.TLPCRUD.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
+            this.TLPCRUD.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
+            this.TLPCRUD.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
+            this.TLPCRUD.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
+            this.TLPCRUD.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
+            this.TLPCRUD.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
+            this.TLPCRUD.Size = new System.Drawing.Size(586, 169);
+            this.TLPCRUD.TabIndex = 1;
             // 
             // TxtEmpCode
             // 
@@ -215,48 +246,6 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
             this.TxtEmpName.Size = new System.Drawing.Size(428, 23);
             this.TxtEmpName.TabIndex = 8;
             // 
-            // BtnCreate
-            // 
-            this.BtnCreate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnCreate.Location = new System.Drawing.Point(3, 3);
-            this.BtnCreate.Name = "BtnCreate";
-            this.BtnCreate.Size = new System.Drawing.Size(207, 36);
-            this.BtnCreate.TabIndex = 14;
-            this.BtnCreate.Text = "Add";
-            this.BtnCreate.UseVisualStyleBackColor = true;
-            this.BtnCreate.Click += new System.EventHandler(this.BtnCreate_Click);
-            // 
-            // BtnEdit
-            // 
-            this.BtnEdit.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnEdit.Location = new System.Drawing.Point(3, 45);
-            this.BtnEdit.Name = "BtnEdit";
-            this.BtnEdit.Size = new System.Drawing.Size(207, 36);
-            this.BtnEdit.TabIndex = 15;
-            this.BtnEdit.Text = "Edit";
-            this.BtnEdit.UseVisualStyleBackColor = true;
-            this.BtnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
-            // 
-            // BtnDelete
-            // 
-            this.BtnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnDelete.Location = new System.Drawing.Point(3, 87);
-            this.BtnDelete.Name = "BtnDelete";
-            this.BtnDelete.Size = new System.Drawing.Size(207, 36);
-            this.BtnDelete.TabIndex = 16;
-            this.BtnDelete.Text = "Delete";
-            this.BtnDelete.UseVisualStyleBackColor = true;
-            // 
-            // BtnSave
-            // 
-            this.BtnSave.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnSave.Location = new System.Drawing.Point(3, 129);
-            this.BtnSave.Name = "BtnSave";
-            this.BtnSave.Size = new System.Drawing.Size(207, 37);
-            this.BtnSave.TabIndex = 17;
-            this.BtnSave.Text = "Save";
-            this.BtnSave.UseVisualStyleBackColor = true;
-            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 2;
@@ -294,43 +283,12 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
             this.RDOInActive.Text = "Inactive";
             this.RDOInActive.UseVisualStyleBackColor = true;
             // 
-            // DGVEmployee
-            // 
-            this.DGVEmployee.AllowUserToAddRows = false;
-            this.DGVEmployee.AllowUserToDeleteRows = false;
-            this.DGVEmployee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.DGVEmployee.BackgroundColor = System.Drawing.Color.White;
-            this.DGVEmployee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVEmployee.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DGVEmployee.Location = new System.Drawing.Point(58, 226);
-            this.DGVEmployee.Name = "DGVEmployee";
-            this.DGVEmployee.ReadOnly = true;
-            this.DGVEmployee.RowTemplate.Height = 25;
-            this.DGVEmployee.Size = new System.Drawing.Size(811, 296);
-            this.DGVEmployee.TabIndex = 0;
-            this.DGVEmployee.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVEmployee_CellClick);
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.9963F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.0037F));
-            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel2, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 1, 0);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(58, 3);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(811, 175);
-            this.tableLayoutPanel4.TabIndex = 2;
-            // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.Controls.Add(this.BtnCreate, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.BtnEdit, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.BtnReset, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.BtnDelete, 0, 2);
             this.tableLayoutPanel5.Controls.Add(this.BtnSave, 0, 3);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -344,6 +302,50 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
             this.tableLayoutPanel5.Size = new System.Drawing.Size(213, 169);
             this.tableLayoutPanel5.TabIndex = 2;
             // 
+            // BtnCreate
+            // 
+            this.BtnCreate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnCreate.Location = new System.Drawing.Point(3, 3);
+            this.BtnCreate.Name = "BtnCreate";
+            this.BtnCreate.Size = new System.Drawing.Size(207, 36);
+            this.BtnCreate.TabIndex = 14;
+            this.BtnCreate.Text = "Add";
+            this.BtnCreate.UseVisualStyleBackColor = true;
+            this.BtnCreate.Click += new System.EventHandler(this.BtnCreate_Click);
+            // 
+            // BtnReset
+            // 
+            this.BtnReset.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnReset.Location = new System.Drawing.Point(3, 45);
+            this.BtnReset.Name = "BtnReset";
+            this.BtnReset.Size = new System.Drawing.Size(207, 36);
+            this.BtnReset.TabIndex = 15;
+            this.BtnReset.Text = "Reset";
+            this.BtnReset.UseVisualStyleBackColor = true;
+            this.BtnReset.Click += new System.EventHandler(this.BtnReset_Click);
+            // 
+            // BtnDelete
+            // 
+            this.BtnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnDelete.Location = new System.Drawing.Point(3, 87);
+            this.BtnDelete.Name = "BtnDelete";
+            this.BtnDelete.Size = new System.Drawing.Size(207, 36);
+            this.BtnDelete.TabIndex = 16;
+            this.BtnDelete.Text = "Delete";
+            this.BtnDelete.UseVisualStyleBackColor = true;
+            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
+            // 
+            // BtnSave
+            // 
+            this.BtnSave.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnSave.Location = new System.Drawing.Point(3, 129);
+            this.BtnSave.Name = "BtnSave";
+            this.BtnSave.Size = new System.Drawing.Size(207, 37);
+            this.BtnSave.TabIndex = 17;
+            this.BtnSave.Text = "Save";
+            this.BtnSave.UseVisualStyleBackColor = true;
+            this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
+            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -355,12 +357,12 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
             this.Text = "Employee";
             this.Load += new System.EventHandler(this.EmployeeForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVEmployee)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
+            this.TLPCRUD.ResumeLayout(false);
+            this.TLPCRUD.PerformLayout();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -370,7 +372,7 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridView DGVEmployee;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel TLPCRUD;
         private System.Windows.Forms.TextBox TxtEmpCode;
         private System.Windows.Forms.TextBox TxtAddress;
         private System.Windows.Forms.TextBox TxtEmail;
@@ -383,7 +385,7 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox TxtEmpName;
         private System.Windows.Forms.Button BtnCreate;
-        private System.Windows.Forms.Button BtnEdit;
+        private System.Windows.Forms.Button BtnReset;
         private System.Windows.Forms.Button BtnDelete;
         private System.Windows.Forms.Button BtnSave;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
