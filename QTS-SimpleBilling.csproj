@@ -9,11 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Forms\Master Forms\" />
+    <Folder Include="Forms\View\" />
     <Folder Include="Forms\Reports\" />
     <Folder Include="Forms\Tools\" />
-    <Folder Include="BAL\" />
-    <Folder Include="Repo\" />
+    <Folder Include="Providers\" />
   </ItemGroup>
 
   <ItemGroup>

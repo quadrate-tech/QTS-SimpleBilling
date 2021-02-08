@@ -32,13 +32,14 @@ namespace QTS_SimpleBilling
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MasterForms = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuItems = new System.Windows.Forms.ToolStripMenuItem();
-            this.View = new System.Windows.Forms.ToolStripMenuItem();
-            this.Tools = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuCategory = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuShelf = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuUnits = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuCost = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuSellingPrice = new System.Windows.Forms.ToolStripMenuItem();
+            this.View = new System.Windows.Forms.ToolStripMenuItem();
+            this.Tools = new System.Windows.Forms.ToolStripMenuItem();
+            this.ReportProfitAndLoss = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +51,7 @@ namespace QTS_SimpleBilling
             this.Tools});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(978, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1039, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -72,18 +73,6 @@ namespace QTS_SimpleBilling
             this.MenuItems.Name = "MenuItems";
             this.MenuItems.Size = new System.Drawing.Size(189, 22);
             this.MenuItems.Text = "Manage Items";
-            // 
-            // View
-            // 
-            this.View.Name = "View";
-            this.View.Size = new System.Drawing.Size(44, 20);
-            this.View.Text = "View";
-            // 
-            // Tools
-            // 
-            this.Tools.Name = "Tools";
-            this.Tools.Size = new System.Drawing.Size(46, 20);
-            this.Tools.Text = "Tools";
             // 
             // MenuCategory
             // 
@@ -115,11 +104,31 @@ namespace QTS_SimpleBilling
             this.MenuSellingPrice.Size = new System.Drawing.Size(189, 22);
             this.MenuSellingPrice.Text = "Manage Selling Price";
             // 
+            // View
+            // 
+            this.View.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ReportProfitAndLoss});
+            this.View.Name = "View";
+            this.View.Size = new System.Drawing.Size(44, 20);
+            this.View.Text = "View";
+            // 
+            // Tools
+            // 
+            this.Tools.Name = "Tools";
+            this.Tools.Size = new System.Drawing.Size(46, 20);
+            this.Tools.Text = "Tools";
+            // 
+            // ReportProfitAndLoss
+            // 
+            this.ReportProfitAndLoss.Name = "ReportProfitAndLoss";
+            this.ReportProfitAndLoss.Size = new System.Drawing.Size(173, 22);
+            this.ReportProfitAndLoss.Text = "Profit & Loss Report ";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(978, 723);
+            this.ClientSize = new System.Drawing.Size(1039, 739);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -144,6 +153,7 @@ namespace QTS_SimpleBilling
         private System.Windows.Forms.ToolStripMenuItem MenuUnits;
         private System.Windows.Forms.ToolStripMenuItem MenuCost;
         private System.Windows.Forms.ToolStripMenuItem MenuSellingPrice;
+        private System.Windows.Forms.ToolStripMenuItem ReportProfitAndLoss;
     }
 }
 
