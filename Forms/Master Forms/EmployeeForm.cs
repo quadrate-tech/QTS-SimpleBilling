@@ -111,5 +111,25 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
                 DGVEmployee.DataSource = empRepo.View();
             }
         }
+
+        private void TxtSearchEmployees_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                string query = TxtSearchEmployees.Text.Trim();
+                if (!string.IsNullOrEmpty(query))
+                {
+                    DGVEmployee.DataSource = empRepo.Search(query);
+                }
+                else
+                {
+                    DGVEmployee.DataSource = empRepo.View();
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

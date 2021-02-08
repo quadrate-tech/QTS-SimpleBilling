@@ -53,12 +53,15 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
             this.BtnDelete = new System.Windows.Forms.Button();
             this.BtnSave = new System.Windows.Forms.Button();
             this.TBLFilter = new System.Windows.Forms.TableLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.TxtSearchEmployees = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVEmployee)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             this.TLPCRUD.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
+            this.TBLFilter.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -352,14 +355,38 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
             // TBLFilter
             // 
             this.TBLFilter.ColumnCount = 2;
-            this.TBLFilter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.TBLFilter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.TBLFilter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.TBLFilter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.TBLFilter.Controls.Add(this.label3, 0, 0);
+            this.TBLFilter.Controls.Add(this.TxtSearchEmployees, 1, 0);
             this.TBLFilter.Location = new System.Drawing.Point(58, 184);
             this.TBLFilter.Name = "TBLFilter";
             this.TBLFilter.RowCount = 1;
             this.TBLFilter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.TBLFilter.Size = new System.Drawing.Size(811, 36);
             this.TBLFilter.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Location = new System.Drawing.Point(183, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(57, 36);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Search";
+            // 
+            // TxtSearchEmployees
+            // 
+            this.TxtSearchEmployees.BackColor = System.Drawing.Color.White;
+            this.TxtSearchEmployees.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TxtSearchEmployees.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TxtSearchEmployees.Location = new System.Drawing.Point(246, 3);
+            this.TxtSearchEmployees.Name = "TxtSearchEmployees";
+            this.TxtSearchEmployees.Size = new System.Drawing.Size(562, 25);
+            this.TxtSearchEmployees.TabIndex = 1;
+            this.TxtSearchEmployees.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtSearchEmployees_KeyUp);
             // 
             // EmployeeForm
             // 
@@ -379,6 +406,8 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
+            this.TBLFilter.ResumeLayout(false);
+            this.TBLFilter.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -409,5 +438,7 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.TableLayoutPanel TBLFilter;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox TxtSearchEmployees;
     }
 }
