@@ -52,6 +52,7 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
             this.BtnReset = new System.Windows.Forms.Button();
             this.BtnDelete = new System.Windows.Forms.Button();
             this.BtnSave = new System.Windows.Forms.Button();
+            this.TBLFilter = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVEmployee)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
@@ -68,6 +69,7 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6F));
             this.tableLayoutPanel1.Controls.Add(this.DGVEmployee, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.TBLFilter, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -347,6 +349,18 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
             this.BtnSave.UseVisualStyleBackColor = true;
             this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
+            // TBLFilter
+            // 
+            this.TBLFilter.ColumnCount = 2;
+            this.TBLFilter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.TBLFilter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.TBLFilter.Location = new System.Drawing.Point(58, 184);
+            this.TBLFilter.Name = "TBLFilter";
+            this.TBLFilter.RowCount = 1;
+            this.TBLFilter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.TBLFilter.Size = new System.Drawing.Size(811, 36);
+            this.TBLFilter.TabIndex = 3;
+            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -394,5 +408,6 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
         private System.Windows.Forms.RadioButton RDOInActive;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.TableLayoutPanel TBLFilter;
     }
 }
