@@ -91,6 +91,7 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
             this.DGVEmployee.Name = "DGVEmployee";
             this.DGVEmployee.ReadOnly = true;
             this.DGVEmployee.RowTemplate.Height = 25;
+            this.DGVEmployee.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGVEmployee.Size = new System.Drawing.Size(811, 296);
             this.DGVEmployee.TabIndex = 0;
             this.DGVEmployee.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVEmployee_CellClick);

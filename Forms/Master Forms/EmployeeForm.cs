@@ -52,6 +52,7 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
 
         private void DGVEmployee_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            TLPCRUD.Enabled = true;
             emp.EmployeeId = Convert.ToInt32(DGVEmployee.SelectedRows[0].Cells[0].Value.ToString());
             emp.EmployeeName = DGVEmployee.SelectedRows[0].Cells[1].Value.ToString();
             emp.Contact = DGVEmployee.SelectedRows[0].Cells[2].Value.ToString();

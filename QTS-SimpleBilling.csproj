@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Forms\View\" />
     <Folder Include="Forms\Reports\" />
     <Folder Include="Forms\Tools\" />
     <Folder Include="Providers\" />

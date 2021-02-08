@@ -14,11 +14,16 @@ namespace QTS_SimpleBilling.EmpRepo
             int result = 0;
             try
             {
+                //Initiate the instance of DBContext
                 using BillingContext context = new BillingContext();
+                //check specific record for same employee id is exist or not
                 var emp = context.Employees.FirstOrDefault(c => c.EmployeeId == t.EmployeeId);
+
                 if (emp == null)
                 {
+                    //adding employee object to context
                     context.Add(t);
+                    //save changes 
                     return result = context.SaveChanges();
                 }
                 else
