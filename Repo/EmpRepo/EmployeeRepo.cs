@@ -54,6 +54,25 @@ namespace QTS_SimpleBilling.EmpRepo
             }
         }
 
+        public List<Employee> Search(string t)
+        {
+            try
+            {
+                using BillingContext context = new BillingContext();
+                return context.Employees.Where(c=>c.EmployeeName.Contains(t) || 
+                                                  c.Email.Contains(t) || 
+                                                  c.Address.Contains(t) ||
+                                                  c.Contact.Contains(t) ||
+                                                  c.EmployeeCode.Contains(t) ||
+                                                  c.EmployeeId.ToString() == t).ToList();
+            }
+            catch (Exception ex)
+            {
+                Exc.ErMessage(ex);
+                return null;
+            }
+        }
+
         public int Update(Employee t)
         {
             int result = 0;

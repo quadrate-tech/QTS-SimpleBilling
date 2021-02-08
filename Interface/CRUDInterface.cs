@@ -12,5 +12,6 @@ namespace QTS_SimpleBilling.Interface
         int Update(T t);
         int Delete(T t);
         List<T> View();
+        List<T> Search(string t);
     }
 }
