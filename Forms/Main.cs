@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QTS_SimpleBilling.Forms.Master_Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,5 +18,15 @@ namespace QTS_SimpleBilling
             InitializeComponent();
         }
 
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void MenuItems_ItemClicked(object sender, EventArgs e)
+        {
+            EmployeeForm emp = new EmployeeForm();
+            emp.Show();
+        }
     }
 }
