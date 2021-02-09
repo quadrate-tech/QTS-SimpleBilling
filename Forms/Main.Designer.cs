@@ -38,8 +38,8 @@ namespace QTS_SimpleBilling
             this.MenuCost = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuSellingPrice = new System.Windows.Forms.ToolStripMenuItem();
             this.View = new System.Windows.Forms.ToolStripMenuItem();
-            this.Tools = new System.Windows.Forms.ToolStripMenuItem();
             this.ReportProfitAndLoss = new System.Windows.Forms.ToolStripMenuItem();
+            this.Tools = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +54,7 @@ namespace QTS_SimpleBilling
             this.menuStrip1.Size = new System.Drawing.Size(1039, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // MasterForms
             // 
@@ -73,6 +74,7 @@ namespace QTS_SimpleBilling
             this.MenuItems.Name = "MenuItems";
             this.MenuItems.Size = new System.Drawing.Size(189, 22);
             this.MenuItems.Text = "Manage Items";
+            this.MenuItems.Click += new System.EventHandler(this.MenuItems_ItemClicked);
             // 
             // MenuCategory
             // 
@@ -112,17 +114,17 @@ namespace QTS_SimpleBilling
             this.View.Size = new System.Drawing.Size(44, 20);
             this.View.Text = "View";
             // 
-            // Tools
-            // 
-            this.Tools.Name = "Tools";
-            this.Tools.Size = new System.Drawing.Size(46, 20);
-            this.Tools.Text = "Tools";
-            // 
             // ReportProfitAndLoss
             // 
             this.ReportProfitAndLoss.Name = "ReportProfitAndLoss";
             this.ReportProfitAndLoss.Size = new System.Drawing.Size(173, 22);
             this.ReportProfitAndLoss.Text = "Profit & Loss Report ";
+            // 
+            // Tools
+            // 
+            this.Tools.Name = "Tools";
+            this.Tools.Size = new System.Drawing.Size(46, 20);
+            this.Tools.Text = "Tools";
             // 
             // Main
             // 
