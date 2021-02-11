@@ -12,5 +12,7 @@ namespace QTS_SimpleBilling.Model
             optionBuilder.UseSqlServer(@"Data Source=(LocalDb)\MSSQLLocalDB; Initial Catalog=QTS-SimpleBilling;Integrated Security=True");
         }
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<ReceiptBody> ReceiptBodies { get; set; }
+        
     }
 }
