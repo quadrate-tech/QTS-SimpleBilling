@@ -12,13 +12,32 @@
     <Folder Include="Forms\View\" />
     <Folder Include="Forms\Reports\" />
     <Folder Include="Forms\Tools\" />
+    <Folder Include="Migrations\" />
     <Folder Include="Providers\" />
+    <Compile Remove="Forms\Reports\**" />
+    <Compile Remove="Forms\Tools\**" />
+    <Compile Remove="Forms\View\**" />
+    <Compile Remove="Providers\**" />
+    <EmbeddedResource Remove="Forms\Reports\**" />
+    <EmbeddedResource Remove="Forms\Tools\**" />
+    <EmbeddedResource Remove="Forms\View\**" />
+    <EmbeddedResource Remove="Providers\**" />
+    <None Remove="Forms\Reports\**" />
+    <None Remove="Forms\Tools\**" />
+    <None Remove="Forms\View\**" />
+    <None Remove="Providers\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Forms\Master Forms\" />
+    <Folder Include="Model\" />
+    <Folder Include="Repo\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.3" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.3" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.3">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
