@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using QTS_SimpleBilling.Model;
 
 namespace QTS_SimpleBilling.Migrations
 {
     [DbContext(typeof(BillingContext))]
-    partial class BillingContextModelSnapshot : ModelSnapshot
+    [Migration("20210211163238_CreateReceiptBodtTable")]
+    partial class CreateReceiptBodtTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -53,34 +55,13 @@ namespace QTS_SimpleBilling.Migrations
                     b.ToTable("Employees");
                 });
 
-
-            modelBuilder.Entity("QTS_SimpleBilling.Model.User", b =>
+            modelBuilder.Entity("QTS_SimpleBilling.Model.ReceiptBody", b =>
                 {
-                    b.Property<int>("UserID")
                     b.Property<int>("ReceiptNo")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .UseIdentityColumn();
-                        
-                    b.Property<int>("EmployeeID")
-                        .HasMaxLength(60)
-                        .HasColumnType("int");
 
-                    b.Property<string>("Password")
-                        .HasMaxLength(60)
-                        .HasColumnType("nvarchar(60)");
-
-                    b.Property<string>("UserName")
-                        .HasMaxLength(60)
-                        .HasColumnType("nvarchar(60)");
-
-                    b.Property<string>("UserType")
-                        .HasMaxLength(60)
-                        .HasColumnType("nvarchar(60)");
-
-                    b.HasKey("UserID");
-
-                    b.ToTable("Users");
                     b.Property<string>("Discount")
                         .HasMaxLength(25)
                         .HasColumnType("nvarchar(25)");

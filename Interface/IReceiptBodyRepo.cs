@@ -6,9 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using QTS_SimpleBilling.Interface;
 
-namespace QTS_SimpleBilling.Repo.EmployeeRepo
+namespace QTS_SimpleBilling.Repo.ReceiptBodyRepo
 {
-    internal interface IEmployeeRepo : CRUDInterface<Employee>
-    {
-    }
+   
+        internal interface IReceiptBodyRepo : CRUDInterface<ReceiptBody>
+        {
+        }
+    
 }

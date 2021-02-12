@@ -1,27 +1,27 @@
 ﻿using QTS_SimpleBilling.BAL;
 using QTS_SimpleBilling.Model;
-using QTS_SimpleBilling.Repo.EmployeeRepo;
+using QTS_SimpleBilling.Repo.ReceiptHeaderRepo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace QTS_SimpleBilling.EmpRepo
+namespace QTS_SimpleBilling.ReceiptRepo
 {
-    public class EmployeeRepo : IEmployeeRepo
+    public class ReceiptHeaderRepo : IReceiptHeaderRepo
     {
-        public int Create(Employee t)
+        public int Create(ReceiptHeader t)
         {
             int result = 0;
             try
             {
                 //Initiate the instance of DBContext
                 using BillingContext context = new BillingContext();
-                //check specific record for same employee id is exist or not
-                var emp = context.Employees.FirstOrDefault(c => c.EmployeeId == t.EmployeeId);
+                //check specific record for same receipt no is exist or not
+                var receipt = context.ReceiptHeaders.FirstOrDefault(c => c.ReceiptNo == t.ReceiptNo);
 
-                if (emp == null)
+                if (receipt == null)
                 {
-                    //adding employee object to context
+                    //adding receipt header object to context
                     context.Add(t);
                     //save changes 
                     return result = context.SaveChanges();
@@ -38,13 +38,13 @@ namespace QTS_SimpleBilling.EmpRepo
             }
         }
 
-        public int Delete(Employee t)
+        public int Delete(ReceiptHeader t)
         {
             int result = 0;
             try
             {
                 using BillingContext context = new BillingContext();
-                context.Employees.Remove(t);
+                context.ReceiptHeaders.Remove(t);
                 return result = context.SaveChanges();
             }
             catch (Exception ex)
@@ -54,17 +54,24 @@ namespace QTS_SimpleBilling.EmpRepo
             }
         }
 
-        public List<Employee> Search(string t)
+        public List<ReceiptHeader> Search(string t)
         {
             try
             {
                 using BillingContext context = new BillingContext();
-                return context.Employees.Where(c=>c.EmployeeName.Contains(t) || 
-                                                  c.Email.Contains(t) || 
-                                                  c.Address.Contains(t) ||
-                                                  c.Contact.Contains(t) ||
-                                                  c.EmployeeCode.Contains(t) ||
-                                                  c.EmployeeId.ToString() == t).ToList();
+                return context.ReceiptHeaders.Where(c => c.Date.Contains(t) ||
+                                                  c.Time.Contains(t) ||
+                                                  c.Employee.Contains(t) ||
+                                                  c.CheckNo.Contains(t) ||
+                                                  c.ReceiptNo.ToString() == t ||
+                                                  c.TotalDiscount.ToString() == t ||
+                                                  c.SubTotal.ToString() == t ||
+                                                  c.NetTotal.ToString() == t ||
+                                                  c.PaidAmount.ToString() == t ||
+                                                  c.DueAmount.ToString() == t ||
+                                                  c.Status.ToString() == t ||
+                                                  c.IsQuotation.ToString() == t ||
+                                                  c.IsPaid.ToString() == t).ToList();
             }
             catch (Exception ex)
             {
@@ -73,7 +80,7 @@ namespace QTS_SimpleBilling.EmpRepo
             }
         }
 
-        public int Update(Employee t)
+        public int Update(ReceiptHeader t)
         {
             int result = 0;
             try
@@ -89,12 +96,12 @@ namespace QTS_SimpleBilling.EmpRepo
             }
         }
 
-        public List<Employee> View()
+        public List<ReceiptHeader> View()
         {
             try
             {
                 using BillingContext context = new BillingContext();
-                return context.Employees.ToList();
+                return context.ReceiptHeaders.ToList();
             }
             catch (Exception ex)
             {

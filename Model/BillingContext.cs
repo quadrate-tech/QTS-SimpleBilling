@@ -9,12 +9,13 @@ namespace QTS_SimpleBilling.Model
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionBuilder)
         {
-            optionBuilder.UseSqlServer(@"Data Source=.\sqlexpress;Initial Catalog=SimpleBilling1;Integrated Security=True");
-        }
+            optionBuilder.UseSqlServer(@"Data Source=(LocalDb)\MSSQLLocalDB; Initial Catalog=QTS-SimpleBilling;Integrated Security=True");
+         }
+
         public DbSet<Employee> Employees { get; set; }
-
         public DbSet<User> Users { get; set; }
-
-
+        public DbSet<ReceiptBody> ReceiptBodies { get; set; }
+        public DbSet<ReceiptHeader> ReceiptHeaders { get; set; }
     }
 }
+
