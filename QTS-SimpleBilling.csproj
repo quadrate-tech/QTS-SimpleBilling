@@ -30,7 +30,6 @@
 
   <ItemGroup>
     <Folder Include="Forms\Master Forms\" />
-    <Folder Include="Model\" />
     <Folder Include="Repo\" />
   </ItemGroup>
 
