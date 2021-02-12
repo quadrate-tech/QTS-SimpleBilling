@@ -18,7 +18,7 @@ namespace QTS_SimpleBilling
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            
+            Application.Run(new EmployeeForm());
         }
     }
 }
