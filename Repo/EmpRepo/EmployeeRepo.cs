@@ -1,6 +1,6 @@
 ﻿using QTS_SimpleBilling.BAL;
+using QTS_SimpleBilling.Interface;
 using QTS_SimpleBilling.Model;
-using QTS_SimpleBilling.Repo.EmployeeRepo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
