@@ -11,6 +11,9 @@ namespace QTS_SimpleBilling.Model
         {
             optionBuilder.UseSqlServer(@"Data Source=LAPTOP-DM8ANEE6\SQLEXPRESS;Initial Catalog=billing;Integrated Security=True");
         }
+
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<ReceiptBody> ReceiptBodies { get; set; }
         public DbSet<ReceiptHeader> ReceiptHeaders { get; set; }
     }
 }

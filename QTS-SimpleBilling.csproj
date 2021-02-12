@@ -9,6 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Forms\View\" />
+    <Folder Include="Forms\Reports\" />
+    <Folder Include="Forms\Tools\" />
+    <Folder Include="Migrations\" />
+    <Folder Include="Providers\" />
     <Compile Remove="Forms\Reports\**" />
     <Compile Remove="Forms\Tools\**" />
     <Compile Remove="Forms\View\**" />
