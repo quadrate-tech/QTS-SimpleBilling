@@ -27,6 +27,7 @@ namespace QTS_SimpleBilling.Forms.Master_Forms
             emp.Address = TxtAddress.Text.Trim();
             emp.EmployeeCode = TxtEmpCode.Text.Trim();
             emp.Status = EmployeeStatus();
+
             return emp;
         }
 
