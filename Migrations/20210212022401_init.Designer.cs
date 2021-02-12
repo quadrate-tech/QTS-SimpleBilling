@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using QTS_SimpleBilling.Model;
 
 namespace QTS_SimpleBilling.Migrations
 {
     [DbContext(typeof(BillingContext))]
-    partial class BillingContextModelSnapshot : ModelSnapshot
+    [Migration("20210212022401_init")]
+    partial class init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -79,63 +81,6 @@ namespace QTS_SimpleBilling.Migrations
                     b.HasKey("EmployeeId");
 
                     b.ToTable("Employees");
-                });
-
-
-            modelBuilder.Entity("QTS_SimpleBilling.Model.User", b =>
-                {
-                    b.Property<int>("UserID")
-                    b.Property<int>("ReceiptNo")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .UseIdentityColumn();
-                        
-                    b.Property<int>("EmployeeID")
-                        .HasMaxLength(60)
-                        .HasColumnType("int");
-
-                    b.Property<string>("Password")
-                        .HasMaxLength(60)
-                        .HasColumnType("nvarchar(60)");
-
-                    b.Property<string>("UserName")
-                        .HasMaxLength(60)
-                        .HasColumnType("nvarchar(60)");
-
-                    b.Property<string>("UserType")
-                        .HasMaxLength(60)
-                        .HasColumnType("nvarchar(60)");
-
-                    b.HasKey("UserID");
-
-                    b.ToTable("Users");
-                    b.Property<string>("Discount")
-                        .HasMaxLength(25)
-                        .HasColumnType("nvarchar(25)");
-
-                    b.Property<string>("NetTotal")
-                        .HasMaxLength(25)
-                        .HasColumnType("nvarchar(25)");
-
-                    b.Property<string>("ProductCode")
-                        .HasMaxLength(40)
-                        .HasColumnType("nvarchar(40)");
-
-                    b.Property<string>("Quantity")
-                        .HasMaxLength(25)
-                        .HasColumnType("nvarchar(25)");
-
-                    b.Property<string>("SubTotal")
-                        .HasMaxLength(25)
-                        .HasColumnType("nvarchar(25)");
-
-                    b.Property<string>("UnitPrice")
-                        .HasMaxLength(25)
-                        .HasColumnType("nvarchar(25)");
-
-                    b.HasKey("ReceiptNo");
-
-                    b.ToTable("ReceiptBodies");
                 });
 #pragma warning restore 612, 618
         }
