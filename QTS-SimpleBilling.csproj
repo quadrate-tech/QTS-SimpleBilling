@@ -12,27 +12,31 @@
     <Folder Include="Forms\View\" />
     <Folder Include="Forms\Reports\" />
     <Folder Include="Forms\Tools\" />
-    <Folder Include="Migrations\" />
     <Folder Include="Providers\" />
     <Compile Remove="Forms\Reports\**" />
     <Compile Remove="Forms\Tools\**" />
     <Compile Remove="Forms\View\**" />
+    <Compile Remove="Migrations\**" />
     <Compile Remove="Providers\**" />
     <Compile Remove="Repo\**" />
     <EmbeddedResource Remove="Forms\Reports\**" />
     <EmbeddedResource Remove="Forms\Tools\**" />
     <EmbeddedResource Remove="Forms\View\**" />
+    <EmbeddedResource Remove="Migrations\**" />
     <EmbeddedResource Remove="Providers\**" />
     <EmbeddedResource Remove="Repo\**" />
     <None Remove="Forms\Reports\**" />
     <None Remove="Forms\Tools\**" />
     <None Remove="Forms\View\**" />
+    <None Remove="Migrations\**" />
     <None Remove="Providers\**" />
     <None Remove="Repo\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Forms\Master Forms\" />
+    <Compile Include="Migrations\20210215055903_QTS.cs" />
+    <Compile Include="Migrations\20210215055903_QTS.Designer.cs" />
+    <Compile Include="Migrations\BillingContextModelSnapshot.cs" />
   </ItemGroup>
 
   <ItemGroup>

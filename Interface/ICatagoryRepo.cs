@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using QTS_SimpleBilling.Model;
+using System.Linq;
+
+
+namespace QTS_SimpleBilling.Interface
+{   
+         interface ICatagoryRepo : CRUDInterface<Catagory>
+        {
+
+        }
+    
+}
