@@ -1,8 +1,6 @@
-using QTS_SimpleBilling.Forms.Master_Forms;
+
+
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QTS_SimpleBilling
@@ -19,7 +17,8 @@ namespace QTS_SimpleBilling
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Main());
-            Application.Run(new EmployeeForm());
+            //Application.Run(new EmployeeForm());
+            Application.Run();
         }
     }
 }
