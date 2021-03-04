@@ -23,6 +23,7 @@ namespace QTS_SimpleBilling.Model
 
         public DbSet<SellingPrice> SellingPrices { get; set; }
         public DbSet<Cost> Costs { get; set; }
+        public DbSet<Customer> Customers { get; set; }
 
 
     }
