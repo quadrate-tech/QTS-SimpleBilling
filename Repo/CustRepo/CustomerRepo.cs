@@ -1,11 +1,12 @@
-﻿using QTS_SimpleBilling.Repo.CustomerRepo;
+﻿using QTS_SimpleBilling.BAL;
 using QTS_SimpleBilling.Model;
+//using QTS_SimpleBilling.Repo.CustomerRepo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System;
-using QTS_SimpleBilling.BAL;
+using QTS_SimpleBilling.Interface;
 
-namespace QTS_SimpleBilling.CusRepo
+namespace QTS_SimpleBilling.CustRepo
 {
     public class CustomerRepo : ICustomerRepo
     {
@@ -13,13 +14,17 @@ namespace QTS_SimpleBilling.CusRepo
         {
             int result = 0;
             try
-            {           
+            {
+                //Initiate the instance of DBContext
                 using BillingContext context = new BillingContext();
-                var cus = context.Customers.FirstOrDefault(c => c.CustomerId == t.CustomerId);
+                //check specific record for same Customer id is exist or not
+                var cust = context.Customers.FirstOrDefault(c => c.CustomerId == t.CustomerId);
 
-                if (cus == null)
+                if (cust == null)
                 {
+                    //adding Customer object to context
                     context.Add(t);
+                    //save changes 
                     return result = context.SaveChanges();
                 }
                 else
@@ -58,8 +63,9 @@ namespace QTS_SimpleBilling.CusRepo
                 return context.Customers.Where(c => c.CustomerName.Contains(t) ||
                                                   c.Email.Contains(t) ||
                                                   c.Address.Contains(t) ||
-                                                  c.Contact.Contains(t) ||                                  
+                                                  c.Contact.Contains(t) ||
                                                   c.CustomerId.ToString() == t).ToList();
+
             }
             catch (Exception ex)
             {
@@ -88,8 +94,8 @@ namespace QTS_SimpleBilling.CusRepo
         {
             try
             {
-                using BillingContext _context = new BillingContext();
-                return _context.Customers.ToList();
+                using BillingContext context = new BillingContext();
+                return context.Customers.ToList();
             }
             catch (Exception ex)
             {

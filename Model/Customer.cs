@@ -1,4 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Text;
 
 namespace QTS_SimpleBilling.Model
 {
@@ -14,5 +17,6 @@ namespace QTS_SimpleBilling.Model
         public string Email { get; set; }
         [MaxLength(240)]
         public string Address { get; set; }
+        
     }
 }
