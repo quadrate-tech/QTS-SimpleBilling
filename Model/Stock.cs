@@ -7,12 +7,11 @@ using System.Threading.Tasks;
 
 namespace QTS_SimpleBilling.Model
 {
-    public class Stocks
+    public class Stock
     {
         [Key]
         public int StockId { get; set; }
         public int ItemCode { get; set; }
-
         public int StockQty { get; set; }
         public DateTime StockDate { get; set; }
 
