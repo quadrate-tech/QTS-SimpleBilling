@@ -1,3 +1,4 @@
+
 # QTS-SIMPLE BILLING SYSTEM
 
 
@@ -32,9 +33,14 @@ According to this project, follow mentioned frameworks basically were used to de
 
 
 
-### .NET Version Details ( .Net framework 4.8)
+### .NET Version Details ( .Net framework 16.8.4)
+
+
+![image](https://user-images.githubusercontent.com/77657271/110068962-cba6ab80-7d9c-11eb-96ff-b5755f8eb098.png)
+
+
 ---
-Users of applications built with the .NET Framework need to have .NET Framework installed. In most cases, .NET Framework is already installed with Windows. If needed, you can download .NET Framework 4.8 latest version.
+Users of applications built with the .NET Framework need to have .NET Framework installed. In most cases, .NET Framework is already installed with Windows. If needed, you can download .NET Framework 16.8.4 latest version.
 
 You need .NET Framework installed in order to run applications on Windows that were created using .NET Framework. It is already included in many versions of Windows. You only need to download and install .NET Framework if prompted to do so.
 
@@ -82,4 +88,3 @@ Visual Studio is an integrated development environment (IDE) that provides devel
 
 - [SQL Server Mangement System]()
 - [SQL Express]()
-
