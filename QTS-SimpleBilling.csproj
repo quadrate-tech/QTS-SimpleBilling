@@ -18,17 +18,18 @@
     <Compile Remove="Forms\Tools\**" />
     <Compile Remove="Forms\View\**" />
     <Compile Remove="Providers\**" />
-    <Compile Remove="Repo\**" />
     <EmbeddedResource Remove="Forms\Reports\**" />
     <EmbeddedResource Remove="Forms\Tools\**" />
     <EmbeddedResource Remove="Forms\View\**" />
     <EmbeddedResource Remove="Providers\**" />
-    <EmbeddedResource Remove="Repo\**" />
     <None Remove="Forms\Reports\**" />
     <None Remove="Forms\Tools\**" />
     <None Remove="Forms\View\**" />
     <None Remove="Providers\**" />
-    <None Remove="Repo\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Repo\ReceiptBodyRepo.cs" />
   </ItemGroup>
 
   <ItemGroup>
