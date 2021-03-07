@@ -16,6 +16,7 @@ namespace WindowsFormsApp2
         {
             InitializeComponent();
         }
+        DataTable table = new DataTable();
 
         private void textBox8_TextChanged(object sender, EventArgs e)
         {
@@ -29,6 +30,15 @@ namespace WindowsFormsApp2
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            table.Columns.Add("LINE ID", typeof(int));
+            table.Columns.Add("ITEM CODE", typeof(int));
+            table.Columns.Add("ITEM NAME", typeof(String));
+            table.Columns.Add("UNIT PRICE", typeof(double));
+            table.Columns.Add("QTY", typeof(double));
+            table.Columns.Add("DISCOUNT", typeof(double));
+            table.Columns.Add("SUB TOTAL", typeof(double));
+
+            dataGridView1.DataSource = table;
 
         }
 
@@ -50,6 +60,21 @@ namespace WindowsFormsApp2
         private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void Quantity_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
+        int x = 1;
+
+        private void Add_Click(object sender, EventArgs e)
+        {
+            int lineId = x;
+            table.Rows.Add(lineId, ItemCode.Text, ItemName.Text, UnitPrice.Text, Quantity.Text, Discount.Text, SubTotal.Text);
+            dataGridView1.DataSource = table;
+            x++;
+           
         }
     }
 }

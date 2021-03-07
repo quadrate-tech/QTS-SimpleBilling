@@ -40,21 +40,16 @@ namespace WindowsFormsApp2
             this.CustomerMobile = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.SubTotal = new System.Windows.Forms.TextBox();
-            this.Total = new System.Windows.Forms.TextBox();
+            this.Add = new System.Windows.Forms.Button();
             this.Address = new System.Windows.Forms.TextBox();
             this.NewInvoice = new System.Windows.Forms.Button();
             this.SalesReturn = new System.Windows.Forms.Button();
             this.SavetoDraft = new System.Windows.Forms.Button();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.Total = new System.Windows.Forms.TextBox();
+            this.SubTotal = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.LINEID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ITEMCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ITEMNM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UNITPRC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QTY = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DISCOUN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SUBTOT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.PrintSave = new System.Windows.Forms.Button();
             this.PrintOnly = new System.Windows.Forms.Button();
@@ -72,6 +67,7 @@ namespace WindowsFormsApp2
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
@@ -115,6 +111,7 @@ namespace WindowsFormsApp2
             this.Quantity.Size = new System.Drawing.Size(326, 23);
             this.Quantity.TabIndex = 5;
             this.Quantity.Text = "Quantity";
+            this.Quantity.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Quantity_KeyDown);
             // 
             // CustomerName
             // 
@@ -181,6 +178,7 @@ namespace WindowsFormsApp2
             this.tableLayoutPanel1.Controls.Add(this.NewInvoice, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.SalesReturn, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.SavetoDraft, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel7, 2, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 99);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -197,8 +195,7 @@ namespace WindowsFormsApp2
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.SubTotal, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.Total, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.Add, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(678, 123);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -208,23 +205,17 @@ namespace WindowsFormsApp2
             this.tableLayoutPanel2.Size = new System.Drawing.Size(307, 34);
             this.tableLayoutPanel2.TabIndex = 8;
             // 
-            // SubTotal
+            // Add
             // 
-            this.SubTotal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SubTotal.Location = new System.Drawing.Point(3, 3);
-            this.SubTotal.Name = "SubTotal";
-            this.SubTotal.Size = new System.Drawing.Size(147, 23);
-            this.SubTotal.TabIndex = 0;
-            this.SubTotal.Text = "SubTotal";
-            // 
-            // Total
-            // 
-            this.Total.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Total.Location = new System.Drawing.Point(156, 3);
-            this.Total.Name = "Total";
-            this.Total.Size = new System.Drawing.Size(148, 23);
-            this.Total.TabIndex = 1;
-            this.Total.Text = "Total";
+            this.Add.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.Add.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Add.Location = new System.Drawing.Point(156, 3);
+            this.Add.Name = "Add";
+            this.Add.Size = new System.Drawing.Size(148, 28);
+            this.Add.TabIndex = 0;
+            this.Add.Text = "ADD";
+            this.Add.UseVisualStyleBackColor = false;
+            this.Add.Click += new System.EventHandler(this.Add_Click);
             // 
             // Address
             // 
@@ -270,6 +261,39 @@ namespace WindowsFormsApp2
             this.SavetoDraft.Text = "Save To Draft";
             this.SavetoDraft.UseVisualStyleBackColor = false;
             // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.ColumnCount = 2;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel7.Controls.Add(this.Total, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.SubTotal, 0, 0);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(678, 83);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 1;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(307, 34);
+            this.tableLayoutPanel7.TabIndex = 13;
+            // 
+            // Total
+            // 
+            this.Total.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Total.Location = new System.Drawing.Point(156, 3);
+            this.Total.Name = "Total";
+            this.Total.Size = new System.Drawing.Size(148, 23);
+            this.Total.TabIndex = 2;
+            this.Total.Text = "Total";
+            // 
+            // SubTotal
+            // 
+            this.SubTotal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SubTotal.Location = new System.Drawing.Point(3, 3);
+            this.SubTotal.Name = "SubTotal";
+            this.SubTotal.Size = new System.Drawing.Size(147, 23);
+            this.SubTotal.TabIndex = 1;
+            this.SubTotal.Text = "Sub Total";
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 2;
@@ -290,14 +314,6 @@ namespace WindowsFormsApp2
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.LINEID,
-            this.ITEMCD,
-            this.ITEMNM,
-            this.UNITPRC,
-            this.QTY,
-            this.DISCOUN,
-            this.SUBTOT});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
@@ -306,55 +322,6 @@ namespace WindowsFormsApp2
             this.dataGridView1.Size = new System.Drawing.Size(982, 285);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // LINEID
-            // 
-            this.LINEID.HeaderText = "LINE ID";
-            this.LINEID.MinimumWidth = 6;
-            this.LINEID.Name = "LINEID";
-            this.LINEID.Width = 125;
-            // 
-            // ITEMCD
-            // 
-            this.ITEMCD.HeaderText = "ITEM CODE";
-            this.ITEMCD.MinimumWidth = 6;
-            this.ITEMCD.Name = "ITEMCD";
-            this.ITEMCD.Width = 125;
-            // 
-            // ITEMNM
-            // 
-            this.ITEMNM.HeaderText = "ITEM NAME";
-            this.ITEMNM.MinimumWidth = 6;
-            this.ITEMNM.Name = "ITEMNM";
-            this.ITEMNM.Width = 200;
-            // 
-            // UNITPRC
-            // 
-            this.UNITPRC.HeaderText = "UNIT PRICE";
-            this.UNITPRC.MinimumWidth = 6;
-            this.UNITPRC.Name = "UNITPRC";
-            this.UNITPRC.Width = 125;
-            // 
-            // QTY
-            // 
-            this.QTY.HeaderText = "QTY";
-            this.QTY.MinimumWidth = 6;
-            this.QTY.Name = "QTY";
-            this.QTY.Width = 125;
-            // 
-            // DISCOUN
-            // 
-            this.DISCOUN.HeaderText = "DISCOUNT";
-            this.DISCOUN.MinimumWidth = 6;
-            this.DISCOUN.Name = "DISCOUN";
-            this.DISCOUN.Width = 125;
-            // 
-            // SUBTOT
-            // 
-            this.SUBTOT.HeaderText = "SUB TOTAL";
-            this.SUBTOT.MinimumWidth = 6;
-            this.SUBTOT.Name = "SUBTOT";
-            this.SUBTOT.Width = 145;
             // 
             // tableLayoutPanel4
             // 
@@ -426,7 +393,7 @@ namespace WindowsFormsApp2
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.88349F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.1165F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 176F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 290F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 297F));
             this.tableLayoutPanel5.Controls.Add(this.TotalDiscount, 2, 0);
             this.tableLayoutPanel5.Controls.Add(this.label1, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.FinalTotal, 1, 1);
@@ -443,7 +410,7 @@ namespace WindowsFormsApp2
             // TotalDiscount
             // 
             this.TotalDiscount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TotalDiscount.Location = new System.Drawing.Point(833, 3);
+            this.TotalDiscount.Location = new System.Drawing.Point(826, 3);
             this.TotalDiscount.Name = "TotalDiscount";
             this.TotalDiscount.Size = new System.Drawing.Size(170, 23);
             this.TotalDiscount.TabIndex = 0;
@@ -453,9 +420,9 @@ namespace WindowsFormsApp2
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Location = new System.Drawing.Point(616, 0);
+            this.label1.Location = new System.Drawing.Point(611, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(211, 15);
+            this.label1.Size = new System.Drawing.Size(209, 15);
             this.label1.TabIndex = 1;
             this.label1.Text = "Total Discount";
             // 
@@ -463,16 +430,16 @@ namespace WindowsFormsApp2
             // 
             this.FinalTotal.AutoSize = true;
             this.FinalTotal.Dock = System.Windows.Forms.DockStyle.Top;
-            this.FinalTotal.Location = new System.Drawing.Point(616, 26);
+            this.FinalTotal.Location = new System.Drawing.Point(611, 26);
             this.FinalTotal.Name = "FinalTotal";
-            this.FinalTotal.Size = new System.Drawing.Size(211, 15);
+            this.FinalTotal.Size = new System.Drawing.Size(209, 15);
             this.FinalTotal.TabIndex = 2;
             this.FinalTotal.Text = "Total";
             // 
             // textBox2
             // 
             this.textBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox2.Location = new System.Drawing.Point(833, 29);
+            this.textBox2.Location = new System.Drawing.Point(826, 29);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(170, 23);
             this.textBox2.TabIndex = 3;
@@ -496,7 +463,7 @@ namespace WindowsFormsApp2
             this.tableLayoutPanel6.ColumnCount = 3;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.10593F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.89407F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 288F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 295F));
             this.tableLayoutPanel6.Controls.Add(this.TotalDisco, 1, 0);
             this.tableLayoutPanel6.Controls.Add(this.TotalValue, 1, 1);
             this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 550);
@@ -510,18 +477,18 @@ namespace WindowsFormsApp2
             // TotalDisco
             // 
             this.TotalDisco.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TotalDisco.Location = new System.Drawing.Point(801, 3);
+            this.TotalDisco.Location = new System.Drawing.Point(795, 3);
             this.TotalDisco.Name = "TotalDisco";
-            this.TotalDisco.Size = new System.Drawing.Size(204, 23);
+            this.TotalDisco.Size = new System.Drawing.Size(203, 23);
             this.TotalDisco.TabIndex = 0;
             this.TotalDisco.Text = "Total Discount";
             // 
             // TotalValue
             // 
             this.TotalValue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TotalValue.Location = new System.Drawing.Point(801, 29);
+            this.TotalValue.Location = new System.Drawing.Point(795, 29);
             this.TotalValue.Name = "TotalValue";
-            this.TotalValue.Size = new System.Drawing.Size(204, 23);
+            this.TotalValue.Size = new System.Drawing.Size(203, 23);
             this.TotalValue.TabIndex = 1;
             this.TotalValue.Text = "Total";
             // 
@@ -543,7 +510,8 @@ namespace WindowsFormsApp2
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel7.ResumeLayout(false);
+            this.tableLayoutPanel7.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
@@ -569,21 +537,12 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.TextBox CustomerMobile;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TextBox SubTotal;
-        private System.Windows.Forms.TextBox Total;
         private System.Windows.Forms.TextBox Address;
         private System.Windows.Forms.Button NewInvoice;
         private System.Windows.Forms.Button SalesReturn;
         private System.Windows.Forms.Button SavetoDraft;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LINEID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ITEMCD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ITEMNM;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UNITPRC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QTY;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DISCOUN;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SUBTOT;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Button PrintSave;
         private System.Windows.Forms.Button PrintOnly;
@@ -598,6 +557,10 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.TextBox TotalDisco;
         private System.Windows.Forms.TextBox TotalValue;
+        private System.Windows.Forms.Button Add;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.TextBox Total;
+        private System.Windows.Forms.TextBox SubTotal;
     }
 }
 
