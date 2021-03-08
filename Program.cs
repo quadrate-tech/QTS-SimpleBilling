@@ -2,6 +2,7 @@
 
 using System;
 using System.Windows.Forms;
+using WindowsFormsApp2;
 
 namespace QTS_SimpleBilling
 {
@@ -11,14 +12,15 @@ namespace QTS_SimpleBilling
         ///  The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
+            var context = new 
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Main());
             //Application.Run(new EmployeeForm());
-            Application.Run();
+            Application.Run(new Form1());
         }
     }
 }
