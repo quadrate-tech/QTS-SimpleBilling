@@ -76,5 +76,28 @@ namespace WindowsFormsApp2
             x++;
            
         }
+        double tot = 0;
+
+        private void Discount_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                SubTotal.Text = ((double.Parse(Quantity.Text) * double.Parse(UnitPrice.Text)) - double.Parse(Discount.Text)).ToString();
+
+            }
+            catch
+            {
+
+            }
+            
+        }
+        
+
+
+        private void SubTotal_TextChanged(object sender, EventArgs e)
+        {
+            tot = tot + double.Parse(SubTotal.Text);
+            Total.Text = tot.ToString();
+        }
     }
 }
