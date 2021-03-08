@@ -1,59 +1,33 @@
-﻿using System;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using QTS_SimpleBilling.CustRepo;
+using QTS_SimpleBilling.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Configuration;
-using Stripe;
 
 namespace WindowsFormsApp2
 {
     public partial class Form1 : Form
     {
+        readonly Customer cus = new Customer();
+        readonly CustomerRepo cusRepo = new CustomerRepo();
+        AutoCompleteStringCollection MyCollection = new AutoCompleteStringCollection();
 
-
-        public static DataSet ds = new DataSet();
         public Form1()
         {
             InitializeComponent();
         }
 
-        SqlConnection connection = new SqlConnection(@"workstation id=qts-simple-billing.mssql.somee.com; 
-                                        packet size=4096;
-                                        user id=quadrate_SQLLogin_1; 
-                                        pwd=dv7p4lkpzl; 
-                                        data source=qts-simple-billing.mssql.somee.com;
-                                        persist security info=False;
-                                        initial catalog=qts-simple-billing");
-        
-        private void textBox8_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
+           
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -66,19 +40,53 @@ namespace WindowsFormsApp2
 
         }
 
+        private void CustomerMobile_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if ((e.KeyCode == Keys.Back) || (e.KeyCode == Keys.Delete))
+                {
+                    e.Handled = true;
+                }
+
+                string term = CustomerMobile.Text.Trim();
+
+                    if (!string.IsNullOrEmpty(term))
+                    {
+                        List<Customer> customer = new List<Customer>();
+                        customer = cusRepo.Search(term);
+                        foreach (var c in customer)
+                        {
+                            MyCollection.Add(c.Contact);
+                        }
+
+                        CustomerMobile.AutoCompleteCustomSource = MyCollection;
+
+                        CustomerName.Text = customer[0].CustomerName.ToString();
+                        Address.Text = customer[0].Address.ToString();
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("Not Matching Results Found!");
+                    }
+                }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Not Matching Results Found!");
+            }
+        }
+        
+
+        private void CustomerMobile_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //e.Handled = !char.IsDigit(e.KeyChar);
+        }
+
         private void CustomerMobile_TextChanged(object sender, EventArgs e)
         {
-            
-            connection.Open();
-            string sqlSelectQuery = "SELECT" * FROM Customer WHERE PhoneNumber = "+string.Parse(CustomerMobile_TextChanged.Text)";
-            SqlCommand cmd = new SqlCommand(sqlSelectQuery, connection);
-            SqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
-            {
-                CustomerName.Text = (dr["Name"].ToString());
-                Address.Text = (dr["Address"].ToString());
-            }
-            connection.Close();
+
         }
     }
-}
+    }
