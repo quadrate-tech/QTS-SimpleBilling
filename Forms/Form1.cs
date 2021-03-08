@@ -67,15 +67,21 @@ namespace WindowsFormsApp2
             
         }
         int x = 1;
-
-        private void Add_Click(object sender, EventArgs e)
+        private void Discount_KeyDown(object sender, KeyEventArgs e)
         {
-            int lineId = x;
-            table.Rows.Add(lineId, ItemCode.Text, ItemName.Text, UnitPrice.Text, Quantity.Text, Discount.Text, SubTotal.Text);
-            dataGridView1.DataSource = table;
-            x++;
-           
+            if (e.KeyCode == Keys.Enter)
+            {
+                int lineId = x;
+                table.Rows.Add(lineId, ItemCode.Text, ItemName.Text, UnitPrice.Text, Quantity.Text, Discount.Text, SubTotal.Text);
+                dataGridView1.DataSource = table;
+                x++;
+                
+
+            }
         }
+
+
+
         double tot = 0;
 
         private void Discount_TextChanged(object sender, EventArgs e)
@@ -83,6 +89,9 @@ namespace WindowsFormsApp2
             try
             {
                 SubTotal.Text = ((double.Parse(Quantity.Text) * double.Parse(UnitPrice.Text)) - double.Parse(Discount.Text)).ToString();
+                tot = tot+double.Parse(SubTotal.Text);
+                Total.Text = tot.ToString();
+
 
             }
             catch
@@ -93,11 +102,10 @@ namespace WindowsFormsApp2
         }
         
 
-
-        private void SubTotal_TextChanged(object sender, EventArgs e)
+        private void SubTotal_TextChanged_1(object sender, EventArgs e)
         {
-            tot = tot + double.Parse(SubTotal.Text);
-            Total.Text = tot.ToString();
+
+            
         }
     }
 }
