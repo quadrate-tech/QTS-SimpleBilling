@@ -69,6 +69,8 @@ namespace WindowsFormsApp2
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.TotalDisco = new System.Windows.Forms.TextBox();
             this.TotalValue = new System.Windows.Forms.TextBox();
+            this.BtnDeleteItems = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -100,8 +102,7 @@ namespace WindowsFormsApp2
             // 
             // UnitPrice
             // 
-            this.UnitPrice.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.UnitPrice.Location = new System.Drawing.Point(346, 83);
+            this.UnitPrice.Location = new System.Drawing.Point(346, 43);
             this.UnitPrice.Name = "UnitPrice";
             this.UnitPrice.Size = new System.Drawing.Size(326, 23);
             this.UnitPrice.TabIndex = 6;
@@ -109,8 +110,7 @@ namespace WindowsFormsApp2
             // 
             // Quantity
             // 
-            this.Quantity.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Quantity.Location = new System.Drawing.Point(346, 43);
+            this.Quantity.Location = new System.Drawing.Point(346, 83);
             this.Quantity.Name = "Quantity";
             this.Quantity.Size = new System.Drawing.Size(326, 23);
             this.Quantity.TabIndex = 5;
@@ -127,8 +127,7 @@ namespace WindowsFormsApp2
             // 
             // textBox1
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(3, 123);
+            this.textBox1.Location = new System.Drawing.Point(3, 43);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(337, 23);
             this.textBox1.TabIndex = 3;
@@ -136,8 +135,7 @@ namespace WindowsFormsApp2
             // 
             // ItemName
             // 
-            this.ItemName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ItemName.Location = new System.Drawing.Point(3, 83);
+            this.ItemName.Location = new System.Drawing.Point(3, 123);
             this.ItemName.Name = "ItemName";
             this.ItemName.Size = new System.Drawing.Size(337, 23);
             this.ItemName.TabIndex = 2;
@@ -145,8 +143,7 @@ namespace WindowsFormsApp2
             // 
             // ItemCode
             // 
-            this.ItemCode.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ItemCode.Location = new System.Drawing.Point(3, 43);
+            this.ItemCode.Location = new System.Drawing.Point(3, 83);
             this.ItemCode.Name = "ItemCode";
             this.ItemCode.Size = new System.Drawing.Size(337, 23);
             this.ItemCode.TabIndex = 1;
@@ -173,18 +170,18 @@ namespace WindowsFormsApp2
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.20829F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.65077F));
             this.tableLayoutPanel1.Controls.Add(this.CustomerMobile, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.ItemCode, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.ItemName, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.textBox1, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.CustomerName, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.Quantity, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.UnitPrice, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.Discount, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 2, 3);
             this.tableLayoutPanel1.Controls.Add(this.Address, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.NewInvoice, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.SalesReturn, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.SavetoDraft, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.ItemName, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.ItemCode, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.textBox1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.Quantity, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.UnitPrice, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 99);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -503,6 +500,8 @@ namespace WindowsFormsApp2
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 332F));
             this.tableLayoutPanel6.Controls.Add(this.TotalDisco, 1, 0);
             this.tableLayoutPanel6.Controls.Add(this.TotalValue, 1, 1);
+            this.tableLayoutPanel6.Controls.Add(this.BtnDeleteItems, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.textBox3, 2, 0);
             this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 550);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
@@ -528,6 +527,22 @@ namespace WindowsFormsApp2
             this.TotalValue.Size = new System.Drawing.Size(195, 23);
             this.TotalValue.TabIndex = 1;
             this.TotalValue.Text = "Total";
+            // 
+            // BtnDeleteItems
+            // 
+            this.BtnDeleteItems.Location = new System.Drawing.Point(3, 3);
+            this.BtnDeleteItems.Name = "BtnDeleteItems";
+            this.BtnDeleteItems.Size = new System.Drawing.Size(139, 20);
+            this.BtnDeleteItems.TabIndex = 2;
+            this.BtnDeleteItems.Text = "Delete";
+            this.BtnDeleteItems.UseVisualStyleBackColor = true;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(1009, 3);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(281, 23);
+            this.textBox3.TabIndex = 3;
             // 
             // Form1
             // 
@@ -602,6 +617,8 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.TextBox TotalDisco;
         private System.Windows.Forms.TextBox TotalValue;
+        private System.Windows.Forms.Button BtnDeleteItems;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }
 
