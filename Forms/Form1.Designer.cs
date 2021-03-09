@@ -423,7 +423,7 @@ namespace WindowsFormsApp2
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.88349F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.1165F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 176F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 291F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 292F));
             this.tableLayoutPanel5.Controls.Add(this.TotalDiscount, 2, 0);
             this.tableLayoutPanel5.Controls.Add(this.label1, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.FinalTotal, 1, 1);
@@ -440,7 +440,7 @@ namespace WindowsFormsApp2
             // TotalDiscount
             // 
             this.TotalDiscount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TotalDiscount.Location = new System.Drawing.Point(832, 3);
+            this.TotalDiscount.Location = new System.Drawing.Point(831, 3);
             this.TotalDiscount.Name = "TotalDiscount";
             this.TotalDiscount.Size = new System.Drawing.Size(170, 23);
             this.TotalDiscount.TabIndex = 0;
@@ -450,7 +450,7 @@ namespace WindowsFormsApp2
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Location = new System.Drawing.Point(616, 0);
+            this.label1.Location = new System.Drawing.Point(615, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(210, 15);
             this.label1.TabIndex = 1;
@@ -460,7 +460,7 @@ namespace WindowsFormsApp2
             // 
             this.FinalTotal.AutoSize = true;
             this.FinalTotal.Dock = System.Windows.Forms.DockStyle.Top;
-            this.FinalTotal.Location = new System.Drawing.Point(616, 26);
+            this.FinalTotal.Location = new System.Drawing.Point(615, 26);
             this.FinalTotal.Name = "FinalTotal";
             this.FinalTotal.Size = new System.Drawing.Size(210, 15);
             this.FinalTotal.TabIndex = 2;
@@ -469,7 +469,7 @@ namespace WindowsFormsApp2
             // textBox2
             // 
             this.textBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox2.Location = new System.Drawing.Point(832, 29);
+            this.textBox2.Location = new System.Drawing.Point(831, 29);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(170, 23);
             this.textBox2.TabIndex = 3;
@@ -493,7 +493,7 @@ namespace WindowsFormsApp2
             this.tableLayoutPanel6.ColumnCount = 3;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.10593F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.89407F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 289F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 290F));
             this.tableLayoutPanel6.Controls.Add(this.TotalDisco, 1, 0);
             this.tableLayoutPanel6.Controls.Add(this.TotalValue, 1, 1);
             this.tableLayoutPanel6.Controls.Add(this.BtnDeleteItems, 0, 0);
@@ -509,7 +509,7 @@ namespace WindowsFormsApp2
             // TotalDisco
             // 
             this.TotalDisco.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TotalDisco.Location = new System.Drawing.Point(800, 3);
+            this.TotalDisco.Location = new System.Drawing.Point(799, 3);
             this.TotalDisco.Name = "TotalDisco";
             this.TotalDisco.Size = new System.Drawing.Size(204, 23);
             this.TotalDisco.TabIndex = 0;
@@ -518,7 +518,7 @@ namespace WindowsFormsApp2
             // TotalValue
             // 
             this.TotalValue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TotalValue.Location = new System.Drawing.Point(800, 29);
+            this.TotalValue.Location = new System.Drawing.Point(799, 29);
             this.TotalValue.Name = "TotalValue";
             this.TotalValue.Size = new System.Drawing.Size(204, 23);
             this.TotalValue.TabIndex = 1;
@@ -535,7 +535,7 @@ namespace WindowsFormsApp2
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(1010, 3);
+            this.textBox3.Location = new System.Drawing.Point(1009, 3);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(281, 23);
             this.textBox3.TabIndex = 3;
