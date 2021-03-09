@@ -19,7 +19,13 @@ namespace QTS_SimpleBilling.Model
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionBuilder)
         {
-            optionBuilder.UseSqlServer(@"Data Source=.\sqlexpress;Initial Catalog=QTS_SimpleBilling;Integrated Security=True");
+            optionBuilder.UseSqlServer(@"workstation id=qts-simple-billing.mssql.somee.com; 
+                                        packet size=4096;
+                                        user id=quadrate_SQLLogin_1; 
+                                        pwd=dv7p4lkpzl; 
+                                        data source=qts-simple-billing.mssql.somee.com;
+                                        persist security info=False;
+                                        initial catalog=qts-simple-billing");
         }
     }
 }
