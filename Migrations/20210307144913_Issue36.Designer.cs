@@ -10,8 +10,8 @@ using QTS_SimpleBilling.Model;
 namespace QTS_SimpleBilling.Migrations
 {
     [DbContext(typeof(BillingContext))]
-    [Migration("20210304090636_init")]
-    partial class init
+    [Migration("20210307144913_Issue36")]
+    partial class Issue36
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
