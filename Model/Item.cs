@@ -6,6 +6,8 @@ namespace QTS_SimpleBilling.Model
     {
         [Key]
         public int ItemId { get; set; }
+
+        public string ItemCode { get; set; }
         public string ItemName { get; set; }
         public Category ItemCategory { get; set; }
         public Unit ItemUnit { get; set; }
