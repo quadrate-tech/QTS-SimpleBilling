@@ -1,7 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using QTS_SimpleBilling.CustRepo;
-using QTS_SimpleBilling.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,134 +7,238 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QTS_SimpleBilling.BAL;
+using QTS_SimpleBilling.Model;
 
-namespace WindowsFormsApp2
+namespace QTS_SimpleBilling
 {
     public partial class Form1 : Form
     {
-        readonly Customer cus = new Customer();
-        readonly CustomerRepo cusRepo = new CustomerRepo();
-        AutoCompleteStringCollection MyCollection = new AutoCompleteStringCollection();
-
+      
         public Form1()
         {
             InitializeComponent();
         }
-        DataTable table = new DataTable();
 
+       
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           
+            TxtItemCode.Text = string.Empty;
+            TxtItemName.Text = string.Empty;
+            TxtItemCategory.Text = string.Empty;
+            TxtUnitPrice.Text = string.Empty;
+            TxtItemQuantity.Text = string.Empty;
+            TxtItemDiscount.Text = string.Empty;
+            TxtItemSubTotal.Text = string.Empty;
+            TxtItemTotal.Text = string.Empty;
+            TxtTotalDiscount.Text = string.Empty;
+            TxtTotal.Text = string.Empty;
+
+            ItemCodeAutocomplete();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void ItemCodeAutocomplete()
         {
+            AutoCompleteStringCollection Code = new AutoCompleteStringCollection();
 
+            using (BillingContext db = new BillingContext())
+            {
+                var data = db.Items.Select(c => c.ItemCode).ToList();
+                Code.AddRange(data.ToArray());
+                TxtItemCode.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                TxtItemCode.AutoCompleteSource = AutoCompleteSource.CustomSource;
+                TxtItemCode.AutoCompleteCustomSource = Code;
+            }
         }
 
-        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
-        {
-            table.Columns.Add("LINE ID", typeof(int));
-            table.Columns.Add("ITEM CODE", typeof(int));
-            table.Columns.Add("ITEM NAME", typeof(String));
-            table.Columns.Add("UNIT PRICE", typeof(double));
-            table.Columns.Add("QTY", typeof(double));
-            table.Columns.Add("DISCOUNT", typeof(double));
-            table.Columns.Add("SUB TOTAL", typeof(double));
-
-            dataGridView1.DataSource = table;
-
-        }
-
-        private void CustomerMobile_KeyUp(object sender, KeyEventArgs e)
+        private void TxtItemDiscount_KeyUp(object sender, KeyEventArgs e)
         {
             try
             {
-                if ((e.KeyCode == Keys.Back) || (e.KeyCode == Keys.Delete))
+                string query = TxtItemDiscount.Text.Trim();
+                if (!string.IsNullOrEmpty(query))
                 {
-                    e.Handled = true;
+
+                    double Total = Convert.ToInt32(TxtItemQuantity.Text.Trim()) * (Convert.ToInt32(TxtUnitPrice.Text.Trim()) - Convert.ToInt32(TxtItemDiscount.Text.Trim()));
+                    TxtItemTotal.Text = Total.ToString();
+
+
                 }
+                else
+                {
+                    
 
-                string term = CustomerMobile.Text.Trim();
+                    TxtItemTotal.Text = string.Empty;
 
-                    if (!string.IsNullOrEmpty(term))
-                    {
-                        List<Customer> customer = new List<Customer>();
-                        customer = cusRepo.Search(term);
-                        foreach (var c in customer)
-                        {
-                            MyCollection.Add(c.Contact);
-                        }
-
-                        CustomerMobile.AutoCompleteCustomSource = MyCollection;
-
-                        CustomerName.Text = customer[0].CustomerName.ToString();
-                        Address.Text = customer[0].Address.ToString();
-                    }
-
-                    else
-                    {
-                        MessageBox.Show("Not Matching Results Found!");
-                    }
                 }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show("Not Matching Results Found!");
             }
-        }
-        
-
-        private void CustomerMobile_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            //e.Handled = !char.IsDigit(e.KeyChar);
-        }
-
-        private void Quantity_KeyDown(object sender, KeyEventArgs e)
-        {
-            
-        }
-        int x = 1;
-        private void Discount_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
+            catch
             {
-                int lineId = x;
-                table.Rows.Add(lineId, ItemCode.Text, ItemName.Text, UnitPrice.Text, Quantity.Text, Discount.Text, SubTotal.Text);
-                dataGridView1.DataSource = table;
-                x++;
+                MessageBox.Show("Add valid Discount OR valid Quantity..!");
                 
 
             }
         }
 
-
-
-        double tot = 0;
-
-        private void Discount_TextChanged(object sender, EventArgs e)
+        private void TxtItemQuantity_KeyUp(object sender, KeyEventArgs e)
         {
             try
             {
-                SubTotal.Text = ((double.Parse(Quantity.Text) * double.Parse(UnitPrice.Text)) - double.Parse(Discount.Text)).ToString();
-                tot = tot+double.Parse(SubTotal.Text);
-                Total.Text = tot.ToString();
+                string query = TxtItemQuantity.Text.Trim();
+                if (!string.IsNullOrEmpty(query))
+                {
+                    if (!string.IsNullOrEmpty(TxtItemDiscount.Text.Trim()))
+                    {
+                        double subTotal = Convert.ToInt32(TxtItemQuantity.Text.Trim()) * Convert.ToDouble(TxtUnitPrice.Text.Trim());
+                        TxtItemSubTotal.Text = subTotal.ToString();
 
 
+                        double Total = Convert.ToInt32(TxtItemQuantity.Text.Trim()) * (Convert.ToDouble(TxtUnitPrice.Text.Trim()) - Convert.ToInt32(TxtItemDiscount.Text.Trim()));
+                        TxtItemTotal.Text = Total.ToString();
+
+                    }
+                    else
+                    {
+                        double subTotal = Convert.ToInt32(TxtItemQuantity.Text.Trim()) * Convert.ToDouble(TxtUnitPrice.Text.Trim());
+                        TxtItemSubTotal.Text = subTotal.ToString();
+                    }
+
+
+                }
+                else
+                {
+                    TxtItemSubTotal.Text = string.Empty;
+                    
+
+                }
             }
             catch
             {
+                MessageBox.Show("Add valid Quantity..!");
+                TxtItemQuantity.Text = string.Empty;
+            }
+        }
+
+        private void AddToDGV()
+        {
+            DataGridViewRow newRow = new DataGridViewRow();
+            newRow.CreateCells(DGVInvoice);
+            newRow.Cells[0].Value = TxtItemCode.Text;
+            newRow.Cells[1].Value = TxtItemName.Text;
+            newRow.Cells[2].Value = TxtItemQuantity.Text;
+            newRow.Cells[3].Value = TxtUnitPrice.Text;
+            newRow.Cells[4].Value = TxtItemDiscount.Text;
+            newRow.Cells[5].Value = TxtItemTotal.Text;
+            DGVInvoice.Rows.Add(newRow);
+
+        }
+
+        private void CalculateFinalTotals()
+        {
+            if (TxtTotal.Text == "" || TxtTotalDiscount.Text == "")
+            {
+                TxtTotalDiscount.Text = TxtItemDiscount.Text.Trim();
+                TxtTotal.Text = TxtItemTotal.Text.Trim();
 
             }
-            
-        }
-        
 
-        private void SubTotal_TextChanged_1(object sender, EventArgs e)
+            else
+            {
+                TxtTotalDiscount.Text = (Convert.ToDouble(TxtTotalDiscount.Text.Trim()) + Convert.ToDouble(TxtItemDiscount.Text.Trim())).ToString();
+                TxtTotal.Text = (Convert.ToDouble(TxtTotal.Text.Trim()) + Convert.ToDouble(TxtItemTotal.Text.Trim())).ToString();
+            }
+
+        }
+
+        private void TxtItemDiscount_KeyDown(object sender, KeyEventArgs e)
         {
+            try
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    AddToDGV();
+                    CalculateFinalTotals();
+                }
 
-            
+            }
+            catch (Exception ex)
+            {
+                Exc.ErMessage(ex);
+            }
+        }
+
+        private void TxtItemCode_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string query = TxtItemCode.Text.Trim();
+                TxtItemQuantity.Text = string.Empty;
+                TxtItemDiscount.Text = string.Empty;
+                TxtItemSubTotal.Text = string.Empty;
+                TxtItemTotal.Text = string.Empty;
+
+                if (!string.IsNullOrEmpty(query))
+                {
+
+                    using (BillingContext db = new BillingContext())
+                    {
+                        var data = (from i in db.Items
+                                    join s in db.Shelves on i.Shelf.ShelfId equals s.ShelfId
+                                    join c in db.Categories on i.ItemCategory.CategoryId equals c.CategoryId
+                                    join p in db.SellingPrices on i.ItemId equals p.SellingPriceItem.ItemId
+                                    select new
+                                    {
+                                        i.ItemId,
+                                        i.ItemName,
+                                        i.ItemCode,
+                                        i.Shelf.ShelfName,
+                                        i.ItemCategory.CategoryName,
+                                        p.Price
+                                    }).FirstOrDefault(c => c.ItemCode == query);
+
+                        if (data == null)
+                        {
+                            TxtItemName.Text = "";
+
+                            TxtUnitPrice.Text = "";
+                            TxtItemCategory.Text = "";
+                        }
+                        else
+                        {
+                            TxtItemName.Text = data.ItemName;
+
+                            TxtUnitPrice.Text = data.Price.ToString();
+                            TxtItemCategory.Text = data.CategoryName;
+                        }
+
+                    }
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Exc.ErMessage(ex);
+            }
+        }
+
+        private void TxtItemQuantity_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    AddToDGV();
+                    CalculateFinalTotals();
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                Exc.ErMessage(ex);
+            }
         }
     }
-    }
+}
