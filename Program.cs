@@ -1,5 +1,5 @@
 
-
+using WindowsFormsApp2;
 using System;
 using System.Windows.Forms;
 
@@ -18,7 +18,7 @@ namespace QTS_SimpleBilling
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Main());
             //Application.Run(new EmployeeForm());
-            Application.Run();
+            Application.Run(new Form1());
         }
     }
 }
