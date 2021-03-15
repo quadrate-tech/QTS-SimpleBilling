@@ -13,5 +13,7 @@ namespace QTS_SimpleBilling.Model
         public Shelf Shelf { get; set; }
         public bool IsService { get; set; }
 
+        public string ItemCode { get; set; }
+
     }
 }
