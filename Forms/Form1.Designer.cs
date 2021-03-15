@@ -47,7 +47,7 @@ namespace WindowsFormsApp2
             this.SalesReturn = new System.Windows.Forms.Button();
             this.SavetoDraft = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dt = new System.Windows.Forms.DataGridView();
             this.LINEID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ITEMCD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ITEMNM = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,7 +75,7 @@ namespace WindowsFormsApp2
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -272,7 +272,7 @@ namespace WindowsFormsApp2
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.18343F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.81657F));
-            this.tableLayoutPanel3.Controls.Add(this.dataGridView1, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.dt, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 259);
@@ -286,8 +286,8 @@ namespace WindowsFormsApp2
             // 
             // dataGridView1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dt.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dt.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.LINEID,
             this.ITEMCD,
             this.ITEMNM,
@@ -295,14 +295,14 @@ namespace WindowsFormsApp2
             this.QTY,
             this.DISCOUN,
             this.SUBTOT});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(982, 285);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dt.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dt.Location = new System.Drawing.Point(3, 3);
+            this.dt.Name = "dataGridView1";
+            this.dt.RowHeadersWidth = 51;
+            this.dt.RowTemplate.Height = 24;
+            this.dt.Size = new System.Drawing.Size(982, 285);
+            this.dt.TabIndex = 0;
+            this.dt.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // LINEID
             // 
@@ -394,6 +394,7 @@ namespace WindowsFormsApp2
             this.PrintOnly.TabIndex = 1;
             this.PrintOnly.Text = "Print Only";
             this.PrintOnly.UseVisualStyleBackColor = false;
+            this.PrintOnly.Click += new System.EventHandler(this.PrintOnly_Click);
             // 
             // Save
             // 
@@ -423,7 +424,7 @@ namespace WindowsFormsApp2
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.88349F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.1165F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 176F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 291F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 292F));
             this.tableLayoutPanel5.Controls.Add(this.TotalDiscount, 2, 0);
             this.tableLayoutPanel5.Controls.Add(this.label1, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.FinalTotal, 1, 1);
@@ -440,7 +441,7 @@ namespace WindowsFormsApp2
             // TotalDiscount
             // 
             this.TotalDiscount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TotalDiscount.Location = new System.Drawing.Point(832, 3);
+            this.TotalDiscount.Location = new System.Drawing.Point(831, 3);
             this.TotalDiscount.Name = "TotalDiscount";
             this.TotalDiscount.Size = new System.Drawing.Size(170, 23);
             this.TotalDiscount.TabIndex = 0;
@@ -450,7 +451,7 @@ namespace WindowsFormsApp2
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Location = new System.Drawing.Point(616, 0);
+            this.label1.Location = new System.Drawing.Point(615, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(210, 15);
             this.label1.TabIndex = 1;
@@ -460,7 +461,7 @@ namespace WindowsFormsApp2
             // 
             this.FinalTotal.AutoSize = true;
             this.FinalTotal.Dock = System.Windows.Forms.DockStyle.Top;
-            this.FinalTotal.Location = new System.Drawing.Point(616, 26);
+            this.FinalTotal.Location = new System.Drawing.Point(615, 26);
             this.FinalTotal.Name = "FinalTotal";
             this.FinalTotal.Size = new System.Drawing.Size(210, 15);
             this.FinalTotal.TabIndex = 2;
@@ -469,7 +470,7 @@ namespace WindowsFormsApp2
             // textBox2
             // 
             this.textBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.textBox2.Location = new System.Drawing.Point(832, 29);
+            this.textBox2.Location = new System.Drawing.Point(831, 29);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(170, 23);
             this.textBox2.TabIndex = 3;
@@ -493,7 +494,7 @@ namespace WindowsFormsApp2
             this.tableLayoutPanel6.ColumnCount = 3;
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 79.10593F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.89407F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 289F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 290F));
             this.tableLayoutPanel6.Controls.Add(this.TotalDisco, 1, 0);
             this.tableLayoutPanel6.Controls.Add(this.TotalValue, 1, 1);
             this.tableLayoutPanel6.Controls.Add(this.BtnDeleteItems, 0, 0);
@@ -509,7 +510,7 @@ namespace WindowsFormsApp2
             // TotalDisco
             // 
             this.TotalDisco.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TotalDisco.Location = new System.Drawing.Point(800, 3);
+            this.TotalDisco.Location = new System.Drawing.Point(799, 3);
             this.TotalDisco.Name = "TotalDisco";
             this.TotalDisco.Size = new System.Drawing.Size(204, 23);
             this.TotalDisco.TabIndex = 0;
@@ -518,7 +519,7 @@ namespace WindowsFormsApp2
             // TotalValue
             // 
             this.TotalValue.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TotalValue.Location = new System.Drawing.Point(800, 29);
+            this.TotalValue.Location = new System.Drawing.Point(799, 29);
             this.TotalValue.Name = "TotalValue";
             this.TotalValue.Size = new System.Drawing.Size(204, 23);
             this.TotalValue.TabIndex = 1;
@@ -535,7 +536,7 @@ namespace WindowsFormsApp2
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(1010, 3);
+            this.textBox3.Location = new System.Drawing.Point(1009, 3);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(281, 23);
             this.textBox3.TabIndex = 3;
@@ -560,7 +561,7 @@ namespace WindowsFormsApp2
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
@@ -591,7 +592,7 @@ namespace WindowsFormsApp2
         private System.Windows.Forms.Button SalesReturn;
         private System.Windows.Forms.Button SavetoDraft;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dt;
         private System.Windows.Forms.DataGridViewTextBoxColumn LINEID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ITEMCD;
         private System.Windows.Forms.DataGridViewTextBoxColumn ITEMNM;
